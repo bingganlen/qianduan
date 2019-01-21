@@ -1,0 +1,8 @@
+改变选中后，选中区域的背景颜色为浅蓝色。
+　　在css中写入如下代码：
+　　/* webkit, opera, IE9 */
+　　::selection { background:lightblue; }
+　　/* mozilla firefox */
+　　::-moz-selection { background:lightblue; }
+　　说明：
+　　1、-moz-属性前缀是个火狐浏览器用的，而基本的::selection选择器是给谷歌浏览器用的。
