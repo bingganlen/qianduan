@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!--声明当前页面的编码集charset=gbk或gb2312中文编码 , charset=utf-8 国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>顶部浮动导航</title>
+		<meta name="Keywords" content="导航,浮动导航,关键词">
+		<meta name="description" content="">	
+		<!--css , js-->
+
+		<style type="text/css">
+		*{margin:0px; padding:0px;}
+		/*当元素以id命名时，css样式是以#开始，加上名字*/
+		#nav{width:100%; height:45px; background-color:#dd4250;}
+		#nav ul{width:600px; margin:0px auto;}
+		#nav ul li{float:left;/*把竖排内容变成横排*/
+					list-style-type:none;/*去掉圆点*/
+					width:100px; height:45px; line-height:45px; text-align:center;
+					font-size:16px;  font-family:"微软雅黑";}
+		
+		#nav ul li a{color:#fff; text-decoration:none;/*去掉下滑线*/
+		display:block;}
+		#nav ul li a:hover{ background-color:#ed5466;}
+
+		#top{height:100px;}
+		#bottom{height:1000px;}
+		.navscroll{position:fixed;/*固定定位*/left:0px; top:0px;
+		_position:absolute;/*兼容ie6*/
+		_top:expression(offsetParent.scrollTop);/*兼容IE6*/
+		}
+
+		</style>
+
+	</head>
+
+<body>
+<div id="top">关注关注关注关注</div>
+	<div id="nav" >
+		<ul>
+			<li><a href="">关注</a></li>
+			<li><a href="">最新</a></li>
+			<li><a href="">最热</a></li>
+			<li><a href="">视频</a></li>
+			<li><a href="">家居</a></li>
+			<li><a href="">旅行</a></li>
+		</ul>
+	
+	</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+                var topMain=$("#top").height()//是头部的高度加头部与nav导航之间的距离。
+                var nav=$("#nav");
+                $(window).scroll(function(){
+                    if ($(window).scrollTop()>topMain){//如果滚动条顶部的距离大于topMain则就nav导航就添加类.nav_scroll，否则就移除。
+                        nav.addClass("navscroll");
+                    }
+                    else
+                    {
+                        nav.removeClass("navscroll");
+                    }
+                });
+     
+        })
+</script>
+
+<div id="bottom" >关注关注关注关注<br/>
+关注关注关注关注<br/>
+关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/>关注关注关注关注<br/></div>
+</body>
+</html>
