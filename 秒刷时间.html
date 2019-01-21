@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>时间自增</title>
+  <script type="text/javascript">
+     function showTime(){
+		  var mydate = new Date();
+		  var date = mydate.getDate();
+		  var hour = mydate.getHours();
+		  var minutes = mydate.getMinutes();
+		  var sec = mydate.getSeconds();
+		  
+		   if(hour<10)  hour = "0"+hour;
+	       if(minutes<10)  minutes = "0"+minutes;
+	       if(sec<10)  sec = "0"+sec;
+	       document.getElementById("time").innerHTML = "当前时间为： "+hour+"  ："+minutes+" : "+sec;//给ID 为time的标签赋值
+		   setTimeout("showTime()",1000);//每秒执行一次
+		 
+		  }
+	  window.onload = showTime;
+    
+  </script>
+</head>
+
+<body>
+   <div id="content">
+     <div class="top">
+        <ul>
+           <li><a href="#">登陆</a></li>
+           <li></li>
+           <li id="time"></li>
+        </ul>
+     
+     </div>
+   
+   
+   </div>
+</body>
+</html>

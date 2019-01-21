@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS随机点名系统</title>
+   <style type="text/css">
+     #start{background: #F9DB3D; width: 70px;height: 30px; margin-left: 50px;}
+     #stop{background: #F9DB3D; width: 70px;height: 30px; margin-left: 50px;}
+     #txt{margin:auto;font-size:50px;width:300px;height:50px; background:#FFEEFF;}
+   
+   </style>
+
+  <script type="text/javascript">
+      var timer;
+      
+	  function myStart(){
+		   var num = Math.round(Math.random()*(10-1)+1);//随机60 个人、、
+		   var arr =["张三","李四","王五","小刘","蔡力狗","黄金浩","林一起","余弟弟","金梓","暗匣"];
+		   document.getElementById("txt").value = num+"    "+arr[num];
+		   timer = setTimeout("myStart()",60);		  
+		   }
+		   
+		   function myStop(){
+			   clearTimeout(timer);
+			   }
+  
+  </script>
+</head>
+
+<body>
+   点名<input  type="text" id="txt"/> 
+  
+   <input type="button" value="开始" id="start" onclick="myStart()" />
+   <input type="button" value="结束" id="stop" onclick="myStop()" />
+  
+</body>
+</html>

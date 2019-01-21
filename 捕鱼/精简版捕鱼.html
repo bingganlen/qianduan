@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>精简版捕鱼</title>
+	<style type="text/css">
+        body{background: black;text-align: center;}
+        #cl{background: url(game_bg_2_hd.jpg);}
+    </style>
+
+
+	<script type="text/javascript">
+       function loadImgs(arr,fnSucc){  //批量加载图片
+       	var loaded = 0;
+       	var json = 0;
+       	for (var i =  0;i<arr.length;i++)
+       	 {
+       		 var oImg = new Image();
+
+       	     oImg.onload = function(){
+       	     	  
+                  loaded++;//每次图片加载完成时，直到4个图形加载完成                
+                  if (loaded==arr.length) {
+                  	fnSucc(json);
+                  }
+       	    };
+            oImg.src = arr[i];
+            var name = arr[i].split('.')[0];
+            json[name] = oImg;
+            /*
+                json=
+                {
+	               bullet1: img,
+	               cannon1: img
+                }
+            */
+       	}
+       	   
+       }
+
+       window.onload = function(){
+          var oC = document.getElementById("cl");
+          var gd = oC.getContext("2d");
+
+          loadImgs(['bullet1.png',  'cannon1.png',  'coinAni2.png', 'fish1.png'], function(imgs){//调用loadImgs(）
+
+                   setInterval(function(){
+                     	//清除
+                     	gd.clearRect(0,0,width,oC.height);
+                     	//画
+                     
+                      //炮弹画出来
+                      for (var i = 0; i < aBull.length; i++) {
+                          aBull.drawImage( imgs['bullet1'],  aBull[i].x,  aBull[i].y );
+                     }
+
+                      //炮画出来   炮在炮弹后面画出，实现炮弹从炮里飞出
+                      gd.drawImage(
+                           imas["cannon1"],//用PS量取炮弹的宽高
+                         0,0,74,66, gun_x,gun_y,74,66
+                        );
+
+                      //鱼画出来
+                     for (var i = 0; i < aFish.length; i++) {
+                           gd.drawImage(  imgs[''], );
+                     }
+                     },1000/60);//玩游戏的时候， 60帧的跑起来特别流畅
+
+                   //炮弹飞出去
+                   setInterval(function(){
+                       for (var i = 0; i < aBull.length; i++) {
+                         aBull[i].y-=4;
+                       }
+                   },30); 
+
+                   //鱼游起来     
+                   setInterval(function(){
+                      for (var i = 0; i < aFish.length; i++) {
+                        aFish[i].x+=1;
+                      }
+                   }, 1000/60);            
+          });
+
+
+          //炮相关
+          var gun_x = 363;//gun  炮的英文
+          var gun_y = 500;
+
+          document.onkeydown = function(ev){//按键盘
+          	var oEvent = ev||event;
+            ///alert(oEvent.keyCode);   用来查看键盘的键值的  在此处无意义
+          	switch(oEvent.keyCode){
+          		case 37: //左
+          		      gun_x-=5;   break;
+          		case 37: //右
+          		      gun_x+=5;   break;
+          		 //空格--开炮
+          		case 32:  
+                      aBull.push({
+                      	x: gun_x,
+                      	y: gun_y,
+                      });
+          		  break;
+          	}
+          } 
+          //炮弹相关
+          var aBull = [];   //存炮弹数组
+
+          //鱼相关
+          var aFish = [];   //存鱼数组
+
+          setInterval(function(){
+              aFish.push({
+                  x: -60,
+                  y: Math.random()*600,
+                  frame:0
+              });
+          }, 300);
+
+
+
+
+       }; 
+         
+
+	</script>
+       }
+       }
+</head>
+
+<body><!-- canvas画布永远在做  清除和重新绘制 -->
+
+
+	<div></div>
+
+	<canvas id="cl" width="800" height="600"></canvas>
+
+
+</body>
+</html>

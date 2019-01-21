@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>标题跑了</title>
+	<!-- <style type="text/css">
+	    body{}
+	    #main{}
+	    #cl{}
+	</style> -->
+
+	<script type="text/javascript">
+         window.onload = function(){
+         	var o = document.getElementById('cl');
+         	var c = o.getContext('2d');
+         	var oImg = new Image();
+         	oImg.onload = function no(){
+         		//alert("cfcfc");
+         		var i=0;
+         		//drawImage (图片，x，y)
+                setInterval(function(){
+                	c.clearRect(0,0,800,600);//这个位置开始清除
+
+                	c.drawImage(oImg,
+                            0, i*60, 60, 60,
+                            172,179,60,60
+         			);
+         			i++;
+         			if (i==10)  i=0;
+
+                },70);
+            	};
+         	oImg.src = 'coinAni2.png';
+         };
+
+	</script>
+</head>
+<body>
+
+	<div id="main">
+	<div></div>
+	</div>
+	<canvas id="cl" width="800" height="600"></canvas>
+
+
+</body>
+</html>
