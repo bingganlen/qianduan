@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+<script>
+
+
+
+$(document).ready(function(){
+  $("ul.test li").css("border", "4px double");
+});
+</script>
+</head>
+<body>    
+
+<ul class="test">
+  <li>列表项</li>
+  <li>列表项
+  <ul>
+    <li>内嵌列表项</li>
+  </ul>
+  </li>
+  <li>列表项</li>
+</ul>
+
+
+
+<!--  $("p.intro")	选取 class 为 intro 的 <p> 元素	在线实例
+$("p:first")	选取第一个 <p> 元素	在线实例
+$("ul li:first")	选取第一个 <ul> 元素的第一个 <li> 元素	在线实例
+$("ul li:first-child")	选取每个 <ul> 元素的第一个 <li> 元素	在线实例
+$("[href]")	选取带有 href 属性的元素	在线实例
+$("a[target='_blank']")	选取所有 target 属性值等于 "_blank" 的 <a> 元素 -->
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>卡片链接</title>
+	<!--<link rel="stylesheet" href="../css/cardLink.css">-->
+	<style type="text/css">
+	  .a-card {
+		text-decoration: none;
+		display: block;
+		border: 1px solid #DDD;
+		margin: 50px;
+	}
+
+	.card {
+		height: 150px;
+		text-align: center;
+		padding-top: 100px;
+	}
+
+	.a-card:hover {
+		transition:transform .8s cubic-bezier(0.23, 1, 0.32, 1), box-shadow .8s cubic-bezier(0.23, 1, 0.32, 1);
+		box-shadow:0 0 20px rgba(0, 0, 0, 0.3);
+		transform:scale(1.05);
+	    z-index:2;
+	}
+
+	</style>
+</head>
+<body>
+	<div>
+		<a href="" class="a-card">
+			<div class="card">
+				鼠标移上来
+			</div>
+		</a>
+	</div>
+</body>
+</html>

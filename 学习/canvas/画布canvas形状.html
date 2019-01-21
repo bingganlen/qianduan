@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+    body{margin: 0;padding: 0;}
+    #main{}
+    #cl{}
+	</style>
+
+	<script type="text/javascript">
+         window.onload = function(){
+         	var o = document.getElementById("cl");
+         	var c = o.getContext("2d");
+         	c.fillRect(100,100,300,200);
+
+         	c.moveTo(500,500);
+         	c.arc(500,500,150,0,360*Math.PI/180,false);//false  画的圆为 顺时针
+         	c.stroke();
+
+
+
+         	
+         }
+
+	</script>
+</head>
+<body>
+
+	<div id="main">
+	<div></div>
+	</div>
+	<canvas id="cl" width="800" height="600"></canvas>
+
+
+</body>
+</html>

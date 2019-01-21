@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Array数组</title>
+       <style type="text/css">
+		   body{margin: 0;padding: 0;}
+		   #teletype{ width: 500px;height: 100px;margin-bottom: 30px;font-size: 20px;}
+		   .foot{background: #55E376;width: 500px;height: 30px;}
+		   #txtNum{text-align: center;width: 200px;height: 20px;margin-left: 50px; }
+		   #btn{background: #F9DB3D; width: 70px;height: 30px; margin-left: 50px;}
+		</style>
+        <script type="text/javascript">
+		    var i=0;
+			var TextInput = new Array();
+			
+			TextInput[0] = "从一般用户的角度看，注册表系统由两个部分组成：注册表数据库和注册表编辑器。其中注册表数据库包括两个文件：SYSTEM.DAT和USER.DAT。";
+			TextInput[1] = "为了保持Windows系统的向下兼容性，中文Windows 98中保留了INI文件。在形式上，注册表与INI文件有5个显著的特点：";
+			TextInput[2] = "注册表允许对硬件、某些操作系统参数、应用程序和设备驱动程序进行跟踪配置，这使得某些配置的改变（如“控制面板”中的选项等）可以在不重新启动系统的情况下立即生效。";
+			TextInput[3] = "存放着各种参数，直接控制着 Windows  的启动、硬件驱动程序的装载以及一些 Windows  应用程序的运行，从而在整个系统中起着核心作用,!!!操作系统需要知道从哪里找到它们，文件名、版本号、其他设置和信息，没有注册表对设备的记录，它们就不能被使用。";
+			TextInput[4] = "注册表它不是一个什么表格，而是Windows的一个内部数据库，是一个巨大的树状分层的数据库，它是微软专门为其32位操作系统（如Windows NT、Windows 98等）设计的一个系统管理数据库。";
+           
+			function nextMessage(){
+			   if(i<TextInput.length){	   
+				   document.getElementById("teletype").value = TextInput[i]; 
+				   i++;
+			   }else{
+				   alert("已经是最后一条信息了！！");
+			   }
+		   } 
+			window.onload = function(){
+				document.getElementById("txtNum").value = "共有 "+ TextInput.length;
+				nextMessage();
+			}
+		</script>
+	</head>
+
+	<body>
+	   <!--  <select id="year">
+	    <script type="text/javascript"
+		    for(var i=1900;i<2017;i++){
+		       document.w
+		    }
+		</script>
+		</select>年-->
+		<div class="main">			
+			<textarea value="" id="teletype"></textarea><br>
+			<div class="foot">
+				<input type="text" value="" id="txtNum">
+				<input type="button" value="阅读" id="btn" onClick="nextMessage()">
+			</div>
+	   </div>
+	</body>
+</html>

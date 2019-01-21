@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>计算器</title>
+   <style>#h{width=700px;heigth="150px;}</style>
+
+   <script type="text/javascript">
+		function compute(obj){//obj为运算符
+		var num1,num2,result;
+		num1 = Number(document.getElementById("textNum1").value);
+		num2 = Number(document.getElementById("textNum2").value);
+		if(isNaN(num1) || isNaN(num2)){
+     alert("请输入数字");
+     }
+		else{switch(obj){
+			case "+": result = num1+num2;break;
+		    case "-": result = num1-num2;break;
+		    case "*": result = num1*num2;break;
+			case "%": if(num2!=0) result = num1/num2;
+				       else result ="除数不能为0，请重新输入！"; break;	
+		}  }
+		document.getElementById("txtresult").value= result;
+		}
+		
+		
+		window.onload =  function (){
+			document.getElementById("btn").onclick = function showView(){
+				var count = prompt("请输入计算的数： ","");
+				alert(count + "的平方值是： "+ count*count);
+			}}
+		
+	</script>
+</head>
+
+<body>
+    <div id="h">
+    <tr>
+    <td> 第一个数：  </td> <td><input type ="text" name="txtNum1"></td><br>
+     <td> 第二个数：</td>   <td><input type ="text" name="txtNum2"></td>
+     </tr>
+     
+      <!--<div><tr>
+        <td> <input name="addButton" type="button" id="addbtn" value=" + "></td>
+        <td> <input name="subButton" type="button" id="subbtn" value=" - "></td>
+        <td> <input name="mulButton" type="button" id="mulbtn" value=" * "></td>
+        <td> <input name="divButton" type="button" id="divbtn" value=" % "></td>
+      </tr>
+       --></div>
+      <!--start  调用-->
+      <td><input name="addButton" type="button" id="addbtn" value=" + " onClick="compute('+')"/></td>
+      <td><input name="subButton" type="button" id="subbtn" value=" - " onClick="compute('-')"/></td> <td><input name="mulButton" type="button" id="mulbtn" value=" * " onClick="compute('*')"/></td>
+      <td><input name="divButton" type="button" id="divbtn" value=" % " onClick="compute('%')"/></td>
+     
+    
+      <!--end  调用-->
+      <td>计算结果</td>
+      <td colspan="3"><input type="text" name="text" id="txtresult" size="25"/></td>
+      </div>
+        
+    <input id="btn" type="botton" value="   计算数的平方：" onclick="showView()" />
+</body>
+</html>

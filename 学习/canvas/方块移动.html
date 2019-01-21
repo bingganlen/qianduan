@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>画板</title>
+<style type="text/css">
+   *{margin: 0;padding: 0;}
+   body{background: black;}
+   #cl{background: white;}
+   span{color: white;}
+</style>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+ 
+   window.onload = function(){
+   	 var oC = document.getElementById("cl");
+
+   	 var oGC = oC.getContext("2d");
+
+   	 var num = 0;
+
+   	 oGC.fillRect(0,0,100,100);//画方块，方块默认是黑色 坐标在（0,0）
+
+   	 setInterval(function(){
+   	 	num++;
+   	 	oGC.clearRect(0,0,oC.width,oC.height);//清除画布
+   	 	oGC.fillRect(num,num,100,100);
+
+   	 },30);
+
+
+
+   };
+</script>
+
+</head>
+<body>
+<canvas id="cl" width="400" height="400">
+ 
+</canvas>
+
+</body>
+</html>

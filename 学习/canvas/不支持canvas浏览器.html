@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>canvas里面不支持网页标签</title>
+<style type="text/css">
+   *{margin: 0;padding: 0;}
+   body{background: black;}
+   #cl{background: white;}
+   span{color: white;}
+</style>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+  /* $().ready(function(){
+
+   });*/
+   window.onload = function(){
+   	 var oC = document.getElementById("cl");
+
+   	 var oGC = oC.getContext("2d");
+
+     oGC.fillStyle = 'red';
+
+     oGC.strokeStyle = 'blue';//线条样式
+     oGC.lineWidth = 10;//线宽
+
+     oGC.fillRect(50,50,100,100);//填充
+   	 oGC.strokeRect(50.5,50.5,100,100);//线
+
+
+   };
+</script>
+
+</head>
+<body>
+<canvas id="cl" width="400" height="400">
+   <span>不支持canvas浏览器</span>
+</canvas>
+
+</body>
+</html>

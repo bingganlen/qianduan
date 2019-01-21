@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="www.zzjs.net  js 网站">
+	<title>隐藏代码方法js</title>
+	<script type="text/javascript">
+        /*$(document).ready(function(){
+
+        };*/
+        function clear(){
+        	var Source = document.getElementById("mop");
+        	Source = document.body.innerHTML;
+        	document.open();//打开文档
+        	document.write("代码已经被屏蔽！！！！");
+        	document.close();
+        	document.title ="看不见源代码";
+        	document.body.innerHTML=Source;//重新写入旧内容
+        }
+	</script>
+</head>
+
+<body onload="clear()">
+	<marquee>  有隐藏代码吗？？  感觉我被这网站骗了
+	</marquee>
+	<div id="mop">nimaoifjaogjskfgaskhfi</div>
+
+</body>
+</html>

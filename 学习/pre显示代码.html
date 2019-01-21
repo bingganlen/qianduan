@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+	<title></title>
+</head>
+<body>
+
+
+<p>值得注意的是LinkedList类实现了Queue接口，因此我们可以把LinkedList当成Queue来用。</p>
+<div class="cnblogs_code">
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码" /></a></span></div>
+<pre>package com.ljq.test;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueTest {
+    public static void main(String[] args) {
+        //add()和remove()方法在失败的时候会抛出异常(不推荐)
+        Queue&lt;String&gt; queue = new LinkedList&lt;String&gt;();
+        //添加元素
+        queue.offer("a");
+        queue.offer("b");
+        queue.offer("c");
+        queue.offer("d");
+        queue.offer("e");
+        for(String q : queue){
+            System.out.println(q);
+        }
+        System.out.println("===");
+        System.out.println("poll="+queue.poll()); //返回第一个元素，并在队列中删除
+        for(String q : queue){
+            System.out.println(q);
+        }
+        System.out.println("===");
+        System.out.println("element="+queue.element()); //返回第一个元素 
+        for(String q : queue){
+            System.out.println(q);
+        }
+        System.out.println("===");
+        System.out.println("peek="+queue.peek()); //返回第一个元素 
+        for(String q : queue){
+            System.out.println(q);
+        }
+        
+    }
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码" /></a></span></div>
+</div>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+
+
+</body>
+</html>

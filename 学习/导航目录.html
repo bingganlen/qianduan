@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>导航目录</title>
+	<style type="text/css">
+       *{margin: 0;padding: 0;}
+       body{font-size: 12px;font-family: "微软雅黑";color: #666;}
+       .nav{width: 750px;height: 400px;margin: 150px auto;}
+       .nav .header{width: 750px;height: 34px;border-bottom: 1px solid #dadada;position: relative;}
+       .nav .header ul li{float: left;width: 80px;height: 34px;line-height: 34px;text-align: center; list-style: none;}
+
+       .nav .header ul li a{text-decoration: none;font-size: 14px;color: #333;}
+       .nav .header ul li a:hover{color: #039ae3}
+       .nav .header .underline{width: 90px;border-bottom: 2px solid #039ae3;position: absolute;left: 0;bottom: -1px;}
+
+       .nav .n_all{width:750px ;height: 300px;}
+       .nav .n_all .list{width:750px ;height: 300px;display: none;}
+       .nav .n_all .one{background: #456;}
+       .nav .n_all .two{background: #789;}
+       .nav .n_all .three{background: #123;}
+       .nav .n_all .four{background: #adadad;}
+	</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="header">
+   <p class="underline"></p>
+   <ul>
+   	<li><a href="#">编程开发</a><span>|</span></li>
+   	<li><a href="#">工具软件</a><span>|</span></li>
+   	<li><a href="#">游戏设计</a><span>|</span></li>
+   	<li><a href="#">动漫制作</a><span>|</span></li>
+   </ul>
+   </div>
+
+    <div class="n_all">
+       <div class="list one">1</div>
+       <div class="list two">2</div>
+       <div class="list three">3</div>
+       <div class="list four">4</div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){//滑动    当前鼠标到的 li 离左边的距离
+
+       $(".nav").find("li").hover(function(){   //当我摸到li 时，
+          //alert($(window).width());  获取页面宽度
+          var $nav_left = ($(window).width()-750) / 2;  //750是nav 的宽度   ，  两边的距离      我们只是求左边，所有除以2 
+          var _left = $(this).offset().left - $nav_left;
+          //offset()  位置距离       offset().left  当前位置距左边距离
+          
+          $(".nav").find(".underline").stop();//先停下来再滑动   比较流畅
+          $(".nav").find(".underline").animate({left:_left},100);//动画函数
+
+          //联动.
+          var _index = $(this).index();//索引
+          $(".list").eq(_index).show();//找到list字样的class
+          // siblings().hide()   error
+          // siblings 与它同级的不显示   hide相邻元素隐藏
+          $(".list").eq(_index).siblings().hide();
+       });
+    });
+
+</script>
+
+</body>
+</html>

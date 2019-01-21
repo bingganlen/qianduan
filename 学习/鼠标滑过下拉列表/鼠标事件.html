@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("#p1").mouseleave(function(){//mousedown鼠标按下  mouseup松开
+    alert("再见，您的鼠标离开了该段落。");
+  });
+
+   $("#p2").mouseenter(function(){
+    alert('您的鼠标移到了 id="p2" 的元素上!');
+  });
+
+    /*$("#p1").hover(
+		function(){
+			alert("你进入了 p1!");
+		},
+		function(){
+			alert("拜拜! 现在你离开了 p1!");
+		}
+    )*/
+});
+</script>
+</head>
+<body>
+
+<p id="p1" style="width: 110px;border:2px solid red;">这是一个段落。</p>
+<p id="p2" style="width: 110px;border:2px solid blue;">   xx </p>
+</body>
+</html>

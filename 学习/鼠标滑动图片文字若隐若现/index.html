@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!--声明当前页面的编码集charset=gbk中文编码gb2312,charset=utf-8 国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>js鼠标滑动图片文字若隐若现的效果</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="描述">	
+		<!--css , js-->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+		 $(".imgtxt").hide();
+		 $(".Con_L").hover(function(){
+		  $(".imgtxt",this).slideToggle(500);
+		 });
+
+		$(".imgtxt2").hide();
+		 $(".Con_R").hover(function(){
+		  $(".imgtxt2",this).slideToggle(500);
+		 });
+
+		 $(".imgtxt3").hide();
+		 $(".Con_Mt").hover(function(){
+		  $(".imgtxt3",this).slideToggle(500);
+		 });
+
+		  $(".imgtxt3").hide();
+		 $(".Con_Mb").hover(function(){
+		  $(".imgtxt3",this).slideToggle(500);
+		 });
+
+		});
+		</script>
+
+
+		<style type="text/css">
+		*{margin:0px; padding:0px; border:0px;}
+		#Con {width:1000px; height:350px; margin:50px auto;}
+		#Con .Con_L{width:490px; float:left; position:relative; }
+		#Con .Con_M{width:235px; float:left; padding-left:20px;}
+		#Con .Con_R{width:235px; float:right; position:relative;}
+
+		#Con .Con_L div.txt{width:490px;background-color:#000;position:absolute;left:0px;bottom:0px;
+		FILTER:alpha(opacity=60);opacity:0.6;-moz-opacity:0.6; font-size:12px; height:auto;}
+		#Con .Con_L .txt .imgtxt{color:#fff; font-size:12px; line-height:30px;padding-left:10px;
+		width:490px; }
+
+
+		#Con .Con_R div.txt2{width:235px;background-color:#000;position:absolute;left:0px;bottom:0px;
+		FILTER:alpha(opacity=60);opacity:0.6;-moz-opacity:0.6; font-size:12px; height:auto;}
+
+		#Con .Con_R .txt2 .imgtxt2{color:#fff; font-size:12px; line-height:30px;padding-left:10px;
+		width:490px; line-height:30px;}
+
+		.Con_Mt{height:165px; position:relative;}
+		.Con_Mb{height:165px; position:relative; padding-top:20px;}
+
+		#Con .Con_M div.txt3{width:235px;background-color:#000;position:absolute;left:0px;bottom:0px;
+		FILTER:alpha(opacity=60);opacity:0.6;-moz-opacity:0.6; font-size:12px; }
+
+		#Con .Con_M .txt3 .imgtxt3{color:#fff; font-size:12px; line-height:30px;padding-left:10px;
+		width:490px; line-height:30px;}
+
+
+		</style>
+	</head>
+
+<body>
+
+
+<div id="Con">
+	<div class="Con_L"><a href=""><img src="images/1.jpg" /></a>
+			<div class="txt"><div class="imgtxt">原木地板一居北欧风格公寓</div></div>
+	</div>
+
+	<div class="Con_M">
+		<div class="Con_Mt"><a href="" ><img src="images/2.jpg" /></a>
+		<div class="txt3"><div class="imgtxt3">纽约79平大落地窗公寓</div></div></div>
+		
+		<div class="Con_Mb"><a href=""><img src="images/3.jpg" /></a>
+		<div class="txt3"><div class="imgtxt3">纽约79平大落地窗公寓</div></div></div>
+		
+	</div>
+
+
+
+	<div class="Con_R"><a href=""><img src="images/4.jpg" /></a>
+		<div class="txt2"><div class="imgtxt2">纽约79平大落地窗公寓</div></div>
+	</div>
+</div>
+
+</body>
+</html>

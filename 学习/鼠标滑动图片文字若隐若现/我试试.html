@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!--声明当前页面的编码集charset=gbk中文编码gb2312,charset=utf-8 国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面的三要素-->
+		<title>js鼠标滑动图片文字若隐若现的效果</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="描述">	
+		<!--css , js-->
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+            /*$(".Con_L").click(function(){
+            	$(".txt").fadeTo(1000,0.5);
+            });*/
+
+            $(".txt").hide();
+            $(".Con_L").hover(function(){
+            	$(".txt",this).slideToggle(0.5);
+            });
+		});
+		</script>
+
+
+		<style type="text/css">
+		*{margin:0px; padding:0px; border:0px;}
+		#Con{width: 1000px;height: 350px;margin:100px auto;}
+		#Con .Con_L{width:490px; height:350px;/*控制背景颜色*/
+			float:left; /*左浮动，使竖排内容变成横排*/
+			position:relative;/*相对定位元素*/}
+			
+		.txt{background-color:#000;width:490px; position: absolute;left:0;bottom: 0;FILTER:alpha(opacity=60);opacity:0.6;-moz-opacity:0.6;height:auto;}
+	    .ImgTxt{color: white;font-size:14px;padding-left:10px; line-height:30px;}
+		</style>
+	</head>
+
+<body>
+
+
+<div id="Con">
+	<div class="Con_L"><a href=""><img src="images/1.jpg" /></a>
+			<div class="txt"><div class="ImgTxt">原木地板一居北欧风格公寓</div></div>
+	</div>
+
+	
+</div>
+
+</body>
+</html>

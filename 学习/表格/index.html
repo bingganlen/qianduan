@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册页面仿表单</title>
+   <style type="text/css">
+	   body{height:100%;width: 100%;margin: 0 auto;padding:0;line-height:20px;position: absolute; padding-left: 300px;}
+	   .top{width:525px;padding: absolute;}
+	    .h2{font-size: 20px; font-weight:bold; color: #3275c3;padding-left:12px;
+}
+       .top .top1{ position:absolute;left:160; margin:0;}
+	   .top .top2{position:absolute; padding-left: 150px; margin:0; }
+	   
+	   table{ position: absolute;padding-top: 70px;}
+	   from{text-align:center;}
+	   .xiant{background: #43DFEC;}
+	   .left{padding-left:10px;}
+	   .left1{padding-left:33px;}
+	   .botton{padding-left: 90px;}
+	   .inputclass{border: solid 1px aqua; width: 190px;height: 20px;}
+	   .note{font-size: 10px;color: #BC2C3E;}
+   </style>
+   <script type="text/javascript">
+	   //该函数作用是根据 ID 获取页面元素
+	   function $(elementId){
+		   return document.getElementById(elementId);
+	   }
+	   
+	  /*用户名验证*/
+	   function checkUser(){
+		   var user = $("user");
+		   var userId = $("user_prompt");
+			   document.getElementById("user").value;
+		   userId.innerHTML = "";
+		   if(user.length<4||user.length>16){ 
+			   userId.innerHTML = "请输入 4 - 16 位用户名"; return false;}
+		   for(var i=0;i<user.length;i++){
+			   if(!isNaN(user.char(i))){
+				  user.innerHTML = "用户名不能出现数字。。";return false;}
+				  }
+		return true;
+	   }
+	/*密码验证*/
+	   function checkPwd(){
+		   var pwd = $("pwd").value;
+		   var pwdId = $("pwd_prompt");
+		   pwdId.innerHTML = "";
+		   if(pwd.length<4||pwd.length>10){ pwdId.innerHTML = "密码由 4 - 10 个字符组成"; return false;}
+		   return true;
+	   }
+	   function checkRepwd(){
+		   var pwd = $("repwd").value;
+		   var repwd = $("pwd").value;//两密码对比
+		   var repwdId = $("pwd_prompt");
+		   repwdId.innerHTML = "";
+		   if(pwd==repwd){ repwdId.innerHTML="两次输入的密码不一致哦";return false;}
+		   
+		   return true;
+	   }
+	   /*邮箱验证*/
+	   function checkEmail(){
+		   var email = $("email").value;
+		   var email_prompt = $("email_prompt");
+		   email_prompt.innerHTML = "";
+		   var index = email.indexOf("@",1);
+		   if(index== -1){//index== -1 index不为1时
+			    email_prompt.innerHTML = "输入的邮箱格式中应包含 @ 符号";  return false;
+		   }
+		   if(email.indexOf('.',index) == -1){
+			   email_prompt.innerHTML = "输入的邮箱格式中应包含 . 符号,且应在 @ 后面"; return false;
+		   }
+		   return true;
+	   }
+	   
+	   /*验证手机号码*/
+	   function checkMobile(){
+		   var mobile = $("mobile").value;
+		   var mobileId = $("mobile_prompt");
+		   mobileId.innerHTML = "";
+		   if(mobile.charAt(0)!= 1){  
+			   mobileId.innerHTML = "手机号码第一个数应该是 1"; return false;}
+		   for(var i=0;i<mobile.length;i++){
+			   if(!isNaN(mobile.charAt(i))){
+				  mobileId.innerHTML = "手机号码不会出现字符。。";return false;}
+				  }
+		return true;
+	   }
+	   /*charAt(0) 回在指定位置的字符。*/
+	  /* 出生日期验证*/
+	   function checkBirth(){
+		   var birth = $("birth").value;
+		   var birthId = $("birth_prompt");
+		   birthId.innerHTML = "";
+		   if(birth.length!= 10 || birth.charAt(4)!= "-" || birth.charAt(7)!= "-"){
+			   birthId.innerHTML = "格式不正确"; return false;
+		   }
+		  // var birthdays = birth.split("-");//split 函数可返回基于 0 的一维数组
+		   return true;
+	   }
+	</script>
+</head>
+
+<body>
+     <div class="top">
+      <div class="top1"><img src="images/logo.jpg" width="150" height="57" /></div>
+      <div class="top2"><img src="images/banner.jpg" width="375" height="57" alt="banner" /></div>
+      </div>
+    <table width="525" border="0">
+  <tbody class="tobody">
+  
+    <tr>
+      <td class="h2">  新用户注册</td>
+    </tr>
+    <tr class="xiant">
+      <td></td>
+    </tr>
+  </tbody>
+  <form action="" method="post" name="myform">
+		<tr>
+      <td class="left">用户名   ：<input type="text" id="user"  class="inputclass" onBlur="checkUser()"/> </td>
+      <td><div class="note" id="user_prompt" >用户名由4-16个字符组成，不能包括数字</div></td>
+    </tr>
+    <tr>
+      <td class="left1"> 密码   ：<input type="text" id="pwd"  class="inputclass" onblur="checkPwd()"/></td>
+       <td><div class="note" id="pwd_prompt">密码由 4 - 10 个字符组成</div></td>
+    </tr>
+    <tr>
+      <td>确认密码 ：<input type="text" id="repwd" class="inputclass" onBlur="checkRepwd()"/></td>
+       <td><div class="note" id="repwd_prompt"></div></td>
+    </tr>
+    <tr>
+      <td>电子邮箱 ：<input type="text" id="email" class="inputclass" onBlur="checkEmail()"/></td>
+      <td><div class="note" id="email_prompt">邮箱格式示例 ：  web@qq.com</div></td>
+    </tr>
+    <tr>
+      <td>手机号码 ：<input type="text" id="mobile" class="inputclass" onBlur="checkMobile()"/></td>
+      <td><div class="note" id="mobile_prompt"></div></td>
+    </tr>
+    <tr>
+      <td>出生日期 ：<input type="text" id = "birth" class="inputclass" onBlur="checkBirth()"/></td>
+      <td><div class="note" id="birth_prompt">请按 xxxx-xx-xx</div></td>
+    </tr>
+    <tr>
+      <td class="botton"><input type="image" src="images/register.jpg" width="91px" height="33px" /></td>
+    </tr>
+  </form>
+</table>
+
+  
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+   <script>
+      var mydate = new Date(); document.write(mydate+"\n");
+      var mydate1 = new Date("2015/01/04"); document.write(mydate1+"\n");
+      var mydate2 = new Date(2014,6,1,10,30,20,50); document.write(mydate2);<!--  没有双引号  -->
+	  
+	  var year = mydate.getFullYear();
+	  var month = mydate.getMonth();
+	  var date = mydate.getDate();
+	  var hour = mydate.getHours();
+	  var minutes = mydate.getMinutes();
+	  var sec = mydate.getSeconds();
+	  document.write("<h2> 今天是：</h2>"+year+"年"+month+"月"+date+"日"+hour+"时"+minutes+"分"+sec+"秒");
+	  
+	  
+	  
+	  
+   </script>
+</head>
+
+<body>
+    
+</body>
+</html>

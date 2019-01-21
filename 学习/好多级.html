@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>好多层</title>
+<style>
+.boos{
+	font-size:14px;
+	font-weight:700;
+}
+
+.boos ul{
+	padding:0;
+	margin:0;
+	list-style-type:none;
+	width:100px;
+	border:1px #00CC33 solid;
+}
+.boos li{
+	background-color:#999;
+	text-indent:1em;
+	float:left;
+	position:relative;
+}
+a,a:visited{
+	display:block;
+	text-decoration:none;
+	height:25px;
+	line-height:25px;
+	color:#FFF;
+	background:#3FC;
+	width:100px;
+	border-bottom:1px #FF6600 solid;
+}
+.one{
+}
+.two{
+}
+.boos ul ul{
+	visibility:hidden;
+	position:absolute;
+	left:100px;
+	top:-1px;
+}
+.boos ul li:hover ul{
+	visibility:visible;
+}
+.boos ul:hover ul ul{
+	visibility:hidden;
+}
+.boos ul:hover li .two:hover ul{
+	visibility:visible;
+}
+
+</style>
+</head>
+
+<body>
+<div class="boos">
+
+	<ul>
+    
+    	<li><a href="#">第一级&nbsp;&nbsp;&nbsp;>></a>
+        	
+            <ul>
+            
+            	<li class="two"><a href="#">第二级&nbsp;&nbsp;&nbsp;>></a>
+                
+                	<ul>
+                    
+                    	<li><a href="#">第三级-1</a></li>
+                        <li><a href="#">第三级-2</a></li>
+                        <li><a href="#">第三级-3</a></li>
+                        
+                    </ul>
+                    
+                </li>
+               
+                <li><a href="#">第二级</a></li>
+                
+                <li class="two"><a href="#">第二级&nbsp;&nbsp;&nbsp;>></a>
+                
+                	<ul>
+                  
+                    	<li><a href="#">第三级-1</a></li>
+                        <li><a href="#">第三级-2</a></li>
+                        <li><a href="#">第三级-3</a></li>
+                 
+                    </ul>
+               
+                </li>
+           
+            </ul>
+            
+        </li>
+       
+        <li><a href="#">第一级</a></li>
+       
+        <li><a href="#">第一级&nbsp;&nbsp;&nbsp;>></a>
+        	 <ul>
+            
+            	<li class="two"><a href="#">第二级&nbsp;&nbsp;&nbsp;>></a>
+                
+                	<ul>
+                    
+                    	<li><a href="#">第三级-1</a></li>
+                        <li><a href="#">第三级-2</a></li>
+                        <li><a href="#">第三级-3</a></li>
+                        
+                    </ul>
+                    
+                </li>
+               
+                <li><a href="#">第二级</a></li>
+                
+                <li class="two"><a href="#">第二级&nbsp;&nbsp;&nbsp;>></a>
+                
+                	<ul>
+                  
+                    	<li><a href="#">第三级-1</a></li>
+                        <li><a href="#">第三级-2</a></li>
+                        <li><a href="#">第三级-3</a></li>
+                 
+                    </ul>
+               
+                </li>
+           
+            </ul>
+        </li>
+    
+    </ul>
+
+</div>
+</body>
+</html>

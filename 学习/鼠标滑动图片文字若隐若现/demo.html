@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!--声明当前页面的编码集charset=gbk中文编码gb2312,charset=utf-8 国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+
+		<!--当前页面的三要素-->
+		<title>js鼠标滑动图片文字若隐若现的效</title>
+		<meta name="Keywords" content="js,图片文字">
+		<meta name="description" content="描述">	
+		
+		<!--css , js-->
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<style type="text/css">
+			*{margin:0px; padding:0px;}
+			/*width属性 1000px  属性值 px像素 */
+			#Con{width:1000px; height:350px; /*1像素，实线，红色的边框线*/
+			margin:100px auto;}
+
+			#Con .Con_L{width:490px; height:350px;/*控制背景颜色*/
+			float:left; /*左浮动，使竖排内容变成横排*/
+			position:relative;/*相对定位元素*/}
+			#Con .Con_M{width:235px; height:350px;  float:left; 
+			padding-left:20px;/*左内边距大小为20像素*/}
+			#Con .Con_R{width:235px; height:350px; float:right; /*右浮动*/
+			position:relative;}
+
+			#Con .Con_M .Con_Mtop{width:235px; height:165px; }
+			#Con .Con_M .Con_Mbottom{width:235px; height:165px; padding-top:20px;/*头部内边距*/}
+
+			#Con .Con_L .Txt{width:490px;   background:#000; position:absolute;
+			left:0px; bottom:0px; 
+			/*实现背景透明代码，你只需要改变他的数值就ok*/
+			FILTER:alpha(opacity=60);opacity:0.6;-moz-opacity:0.6;}
+
+			#Con .Con_L .Txt .ImgTxt{color:#fff;/*字体颜色为白色*/
+			font-size:12px;/*文字大小为12号字体*/
+			padding-left:10px; line-height:30px;/*使文字在高度为30px的盒子竖直方向距中*/}
+
+
+			#Con .Con_R .Txt2{width:235px;   background:#000; position:absolute;
+			left:0px; bottom:0px; FILTER:alpha(opacity=60);opacity:0.6;-moz-opacity:0.6;}
+			#Con .Con_R .Txt2 .ImgTxt2{color:#fff;font-size:12px;padding-left:10px; line-height:30px;}
+
+
+			
+		</style>
+		
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		 $(".ImgTxt").hide();
+		 $(".Con_L").hover(function(){
+		  $(".ImgTxt",this).slideToggle(500);
+		 });
+
+		 $(".ImgTxt2").hide();
+		 $(".Con_R").hover(function(){
+		  $(".ImgTxt2",this).slideToggle(500);
+		 });
+
+		});
+		</script>
+	</head>
+
+	<body>
+		<!--div 盒子模型，宽度，高度，放内容-->
+		<div id="Con">
+			<!--左边开始-->
+			<div class="Con_L"><a href="#"><img src="images/1.jpg" /></a>
+				<div class="Txt"><div class="ImgTxt">原木地板一居北欧风格公寓</div></div>
+			</div>
+			<!--左边结束-->
+
+
+
+
+
+
+			<!--中间开始-->
+			<div class="Con_M">
+				<div class="Con_Mtop"><a href="#"><img src="images/2.jpg" /></a></div>
+				<div class="Con_Mbottom"><a href="#"><img src="images/3.jpg" /></a></div>
+			</div>
+			<!--中间结束-->
+
+			<!--右边开始-->
+			<div class="Con_R"><a href="#"><img src="images/4.jpg"/></a>
+				<div class="Txt2"><div class="ImgTxt2">原木地板一居北欧风格公寓</div>
+			</div>
+			<!--右边结束-->
+		</div>
+
+	</body>
+</html>

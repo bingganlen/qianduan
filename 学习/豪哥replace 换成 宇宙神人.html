@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>豪哥replace 换成 宇宙神人</title>
+<style type="text/css">
+	iframe{background: #34E886;}
+</style>
+</head>
+
+<body>
+    <script type="text/javascript">
+		
+	    var str = "豪哥不做大哥好多年！";
+		document.write("原来&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp： "+str+"<br/>");
+		patt = /豪哥/g;
+	    str1 = str.replace(patt,"宇宙神人");
+	    document.write("现在&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:  "+str1+"<br/><br/>");
+		
+		patt = /(哥)?大哥/g;
+		patt.compile(patt);
+		str1 = str.replace(patt,"宇宙巨屌");
+		document.write("compile改变正则表达式，宇宙巨屌替换 哥或大哥&nbsp: <br/> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+str1+"<br/>");
+		document.write("compile改变正则表达式，宇宙巨屌替换 哥或大哥&nbsp: <br/> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+str1+"<br/>");
+		
+		var result = pett.test(str); document.write(result);
+	</script>
+    
+    <iframe src="#" frameborder="0" width="700" height="300" background="red">
+    	
+    </iframe>
+       <div>
+			var str = "豪哥不做大哥好多年！";<br/>
+			document.write("原来&nbsp： "+str+"<br/>");<br/>
+			patt = /豪哥/g;<br/>
+			str = str.replace(patt,"宇宙神人");<br/>
+			document.write("现在&nbsp:  "+str+"<br/>");<br/>
+	   </div>
+</body>
+</html>

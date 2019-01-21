@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>多图片延时加载JQ</title>
+    <style type="text/css">
+        *{margin: 0;padding:0;}
+    </style>
+    
+
+    <!-- <script type="text/javascript">
+    window.onload = function(){init();};
+    
+    function init(){
+      setTimeout("mainHeight()",100);
+    }
+    
+    function mainHeight(){
+      var imgDom = document.getElementById("picture"); 
+     /* var img = new Image();
+      img.src = imgDom.src;
+      alert(img.width+"          "+img.height); */
+    
+      //获取滚动条的位置    ||前面兼容IE   
+      var stop = document.documentElement.scrollTop || document.body.scrollTop;
+      //获取可见区域的高度
+      var cheight = document.documentElement.clientHeight || document.body.clientHeight;
+      //offsetTop  某个元素距离浏览器顶部的距离
+      var ptop = imgDom.offsetTop;
+      alert(ptop);
+    
+      if (stop+cheight>ptop) {
+        imgDom.src = imgDom.getAttribute("data-src");
+      }else{
+         setTimeout();
+      }
+      }
+       </script> -->
+
+
+</head>
+
+<body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <img data-src="image/2.jpg" src="image/1.jpg" id="picture" class="picture" width="300" height="400">
+   <img data-src="image/3.jpg" src="image/4.jpg" id="picture" class="picture" width="300" height="400">
+   jq :   each() 循环方法    scroll() 滚动    this 代表每一次循环的对象.picture
+   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+   <script type="text/javascript">
+       $(window).scroll(function(){
+
+       });
+
+       function mainHeight(){
+       
+        //获取滚动条的位置    ||前面兼容IE   
+        var stop = document.documentElement.scrollTop || document.body.scrollTop;
+        //获取可见区域的高度
+        var cheight = document.documentElement.clientHeight || document.body.clientHeight;
+        $(".picture").each(function(){
+             var ptop = $(this).offset().top;
+             if (stop+cheight>ptop) {
+               $(this).attr("src",$(this).data("src"));
+             }
+        });
+     
+       }
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+    body{margin: 0;padding: 0;}
+    #main{}
+    #cl{}
+	</style>
+
+	<script type="text/javascript">
+         window.onload = function(){
+         	var o = document.getElementById("cl");
+         	var c = o.getContext("2d");
+         	//PS套索
+         	c.beginPath();//开始选取
+         	c.moveTo(350,63);//连线
+         	c.lineTo(688,310);//
+         	c.lineTo(329,367);//
+         	c.lineTo(144,212);//
+         	c.closePath();//闭合
+         	
+            c.strokeStyle = 'blue';
+            c.lineWidth = 30;
+            c.fillStyle = 'pink';
+            c.stroke();  //选完区域后划线
+         	c.fill();//填充
+
+
+            c.beginPath();
+            c.moveTo(100,200);
+            c.lineTo(200,300);
+            c.lineTo(300,200);
+            c.closePath();
+            c.stroke();
+
+         }
+
+	</script>
+</head>
+<body>
+
+	<div id="main">
+	<div><span>要自己量位置起点moveTo,  路线lineTo</span></div>
+	</div>
+	<canvas id="cl" width="800" height="600"></canvas>
+
+
+</body>
+</html>
