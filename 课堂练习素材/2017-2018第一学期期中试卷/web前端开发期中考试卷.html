@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2017-2018学年度第一学期web前端开发期中试卷</title>
+<style type="text/css">
+body{
+	margin:0 0 0 20px;
+	background:#CFF3FE;
+	}
+.bt {
+	font-size: 24px;
+	font-family: "黑体";
+	line-height:1.5;
+	text-align:center;
+}
+.zt {
+	font-family: "黑体";
+	font-size: 16px;
+	font-weight: normal;
+}
+td{
+	font-size:12px;
+	line-height:20px;
+	color: #414141;
+	}
+#inputTable td{
+	border:1px solid #999;
+	line-height:35px;
+	text-align:left;
+	
+}
+#inputTable{
+	border-collapse:collapse;
+}
+.input{
+	border:none;
+	border:1px solid #333;
+	width:150px;
+	margin-left:3px;
+}
+#inputTable .radio{
+	border:none;
+	width:20px;
+	
+}
+.div_bg {	background-image:url(images/bg.jpg);
+	background-repeat:no-repeat;
+	width:169px;
+	height:290px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.white {font-size:12px;
+       color:#FFFFFF;
+	   padding-top:2px;
+	   cursor:pointer;
+}
+#myTable {	width:145px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.white:hover{font-size:12px;
+             color:#FFFFFF;
+			 padding-top:2px; 
+			 cursor:pointer;
+			 }
+a {
+	color: #06329b;
+	text-decoration: none;
+	line-height:24px;
+}
+a:hover {
+	color: #cc0000;
+	text-decoration: none;
+	line-height:24px;
+}
+.bg{background-image:url(images/menu1.gif);
+	   background-repeat:no-repeat;
+	   height:23px;
+	   width:47px;
+	   text-align:center;}
+.nobg{background-image:url(images/menu2.gif);
+	   background-repeat:no-repeat;
+	   height:23px;
+	   width:47px;
+	   text-align:center;
+	   }
+.btnOut {background-image:url(images/back1.jpg);
+	border:0px;
+	marggin:0px;
+	padding:0px;
+	width:82px;
+	height:23px;
+}
+.btnOver {background-image:url(images/back2.jpg);
+	border:0px;
+	marggin:0px;
+	padding:0px;
+	width:82px;
+	height:23px;
+}
+</style>
+<script type="text/javascript" language="javascript">
+var shu=1;
+function time(){
+	var time=new Date();
+	var hour=time.getHours();
+	var mins=time.getMinutes();
+	var sec=time.getSeconds();
+	if(mins<10)
+	mins="0"+mins;
+	if(sec<10)
+	sec="0"+sec;
+	document.getElementById("digit_clock").value=hour+":"+mins+":"+sec;
+	var myTime=setTimeout("time()",1000);
+	clearTimeout(theTimer);
+	if(shu%2!=0)
+    {
+	    document.getElementById("id").style.visibility="visible";
+        document.getElementById("name").style.visibility="hidden";
+	}
+	else
+	{
+	    document.getElementById("name").style.visibility="visible";
+        document.getElementById("id").style.visibility="hidden";
+	}
+    shu++;
+	var theTimer=setInterval('show2()',2000);
+}
+function $(ElementId)
+{
+	return document.getElementById(ElementId);
+}
+function checkUser(){
+	var user=$("txtName");
+	var userId=$("loginName");
+	userId.innerHTML="";
+	if(user.value=="")
+	{
+		userId.innerHTML="用户名不能为空";
+		return false;
+	}
+	if(user.value.length<6||user.value.length>20)
+	{
+		userId.innerHTML="用户名长度为6-20字符之间";
+		return false;
+	}
+	for(var i=0;i<user.value.length;i++)
+	{
+		var char=user.value.toLowerCase().charAt(i);
+		if((!(char>0&&char<=9))&&(!(char>'a'&&char<='z'))&&char!='_')
+		{
+			userId.innerHTML="用户名必须由字母，数字和下划线组成";
+			return false;
+		}
+	}
+	userId.innerHTML="用户名可用";
+	return true;
+}
+function checkPwd(){
+	var pwd=$("txtPass").value;
+	var pwdId=$("loginPass");
+	pwdId.innerHTML="";
+	if(pwd.length==0)
+	{
+		pwdId.innerHTML="密码不能为空";
+		return false;
+	}
+	if(pwd.length<6||pwd.length>12)
+	{
+		pwdId.innerHTML="密码长度应在6-12字符间";
+		return false;
+	}
+	else{
+		 pwdId.innerHTML="密码可用";
+	     return true;
+	}
+}
+function checkEmail(){
+	var email=$("txtEmail").value;
+	var emailId=$("loginEmail");
+	emailId.innerHTML="";
+	var reg=/^\w+@\w+\.\w+[(com)|(cn)]$/;
+	if(reg.test(email)==false)
+	{
+		emailId.innerHTML="Email格式不正确，例如：web@sohu.com";
+		return false;
+	}
+	else{
+		emailId.innerHTML="邮箱可用";
+	    return true;
+	}
+	
+}
+</script>
+<script type="text/javascript" language="javascript">
+function shower(nub)
+{
+	for(var i=1;i<4;i++)
+	{
+		if(nub==i)
+		{
+            document.getElementById("bg"+i).className="bg";
+			document.getElementById("book"+i).style.display="block";
+		}
+		else
+		{
+            document.getElementById("bg"+i).className="nobg";
+			document.getElementById("book"+i).style.display="none";
+		}
+	}
+}
+
+</script>
+
+</head>
+
+<body onload="time()">
+<p class="bt" >广东科学技术职业学院 计算机学院<br />
+  2017-2018学年度第一学期期中<br />
+web前端开发试卷</p>
+<p class="bt">考试形式：开卷</p>
+<p class="bt">学号:<a id="id" class="bt">0104160505</a>&nbsp;&nbsp;姓名:<a id="name" class="bt">蔡以立</a></p>
+<p><span class="zt">第一题、在文本框中显示系统动态时间（20分）</span></p>
+<p>
+  <input name="T1" type="text" class="input" id="digit_clock" />
+</p>
+<p class="zt">第二题、表单验证（40分）</p>
+<table border="0">
+  <tr>
+    <td width="710"><p>要求：&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;1、用户名和密码要求如果文本框后的提示（15分）</td>
+  </tr>
+  
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、电子邮件地址采用正则表达式验证，邮件地址格式必须正确，并且.号后面只能是com或cn。（10分）</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、按钮悬停时使用图片素材中的back2，移开时使用图片素材中的back1。（10分）</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、提交表单时进行表单验证，验证文本框后面的要求及性别的选择，验证成功提交到sucess.html页面。（5分）</td>
+  </tr>
+</table>
+<form id="form1" name="form1" method="post" action="sucess.html">
+  <table width="381" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="10"><img src="images/header.jpg" alt="" width="503" height="96" /></td>
+    </tr>
+    <tr>
+      <td height="175" align="center" valign="middle"><table width="503" border="0" cellpadding="0" cellspacing="0" id="inputTable">
+        <tr>
+          <td width="153"><div align="right">用户名：</div></td>
+          <td width="517"><input id="txtUser" type="text" class="input"  onblur="checkUser()"/>
+            <div id="loginName" style="display:inline;">包括字母,数字和下划线,长度6-20个字符</div></td>
+        </tr>
+        <tr>
+          <td><div align="right">密码：</div></td>
+          <td><input id="txtPass" type="password" class="input" onblur="checkPwd()" />
+            <div id="loginPass" style="display:inline;">密码长度6-12个字符</div></td>
+        </tr>
+        <tr>
+          <td><div align="right">确认密码：</div></td>
+          <td><input name="txtPass2" type="password" class="input" /></td>
+        </tr>
+        <tr>
+          <td><div align="right">性别：</div></td>
+          <td><input name="sex" type="radio" value="male" class="radio" />
+            男
+            <input name="sex" type="radio" value="fmale" class="radio" />
+            女</td>
+        </tr>
+        
+        <tr>
+          <td><div align="right">电子邮件地址:</div></td>
+          <td><input id="txtEmail" type="text" class="input"  onblur="checkEmail()"/>
+            <div id="loginEmail" style="display:inline;">请用正则表达式验证</div></td>
+        </tr>
+        <tr>
+          <td height="34" colspan="2" style="text-align:center;"><input type="submit" name="Submit" value="提交" onmouseover="this.style.backgroundImage='url(images/back2.jpg)'" onmouseout="this.style.backgroundImage='url(images/back1.jpg)'" onclick="check()"/>
+            &nbsp;
+            <input type="reset" name="Submit2" value="重置" onmouseover="this.style.backgroundImage='url(images/back2.jpg)'" onmouseout="this.style.backgroundImage='url(images/back1.jpg)'"/></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td height="129">&nbsp;</td>
+    </tr>
+  </table>
+  
+</form>
+<p class="zt">第三题、使用JavaScript与CSS实现层的隐藏和显示（20分）</p>
+<div class="div_bg">
+  <table id="myTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td  style="height:50px;" colspan="3"></td>
+    </tr>
+    <tr>
+      <td id="bg1" class="bg" onmouseover="shower(1)"><a class="white" >小说</a></td>
+      <td id="bg2" class="nobg" onmouseover="shower(2)"><a class="white">非小说</a></td>
+      <td id="bg3"  class="nobg" onmouseover="shower(3)"><a class="white">少儿</a></td>
+    </tr>
+    <tr>
+      <td colspan="3" style="padding-top:10px; padding-left:5px; text-align:left;"><div id="book1" style="display:block;" onmouseover="show(1)"><a  href="#" target="_blank">1.时间旅行者的妻子</a><br />
+        <a   href="#" target="_blank">2.女心理师（下）</a><br />
+        <a   href="#" target="_blank">3.鬼吹灯之精绝古城</a><br />
+        <a   href="#" target="_blank">4.女心理师（上）</a><br />
+        <a   href="#" target="_blank">5.小时候</a><br />
+        <a   href="#" target="_blank">6.追风筝的人</a><br />
+        <a   href="#" target="_blank">7.盗墓笔记2</a><br />
+        <a   href="#" target="_blank">8.输赢</a> </div>
+        <div id="book2" style="display:none;"> <a   href="#" target="_blank">1.人生若只如初见</a><br />
+          <a   href="#" target="_blank">2.高效能人士的七个..</a><br />
+          <a   href="#" target="_blank">3.求医不如求己</a><br />
+          <a   href="#" target="_blank">4.人体使用手册</a><br />
+          <a   href="#" target="_blank">5.孩子，把你的手给我</a><br />
+          <a   href="#" target="_blank">6.别笑！我是英文单词书</a><br />
+          <a   href="#" target="_blank">7.人体经络使用手册</a><br />
+          <a   href="#" target="_blank">8.股市稳赚</a> </div>
+        <div id="book3" style="display:none;"> <a   href="#" target="_blank">1.斯凯瑞金色童书·..</a><br />
+          <a   href="#" target="_blank">2.哈利·波特与&quot;混..</a><br />
+          <a   href="#" target="_blank">3.不一样的卡梅拉（..</a><br />
+          <a   href="#" target="_blank">4.它们是怎么来的</a><br />
+          <a   href="#" target="_blank">5.五·三班的坏小子..</a><br />
+          <a   href="#" target="_blank">6.男生日记</a><br />
+          <a   href="#" target="_blank">7.哈利·波特与魔法石</a><br />
+          <a   href="#" target="_blank">8.噼里啪啦丛书(全7册)</a> </div></td>
+    </tr>
+  </table>
+</div>
+<p class="zt">第四题、在标题栏2秒交替显示自己的学号和姓名（20分）</p>
+</body>
+</html>

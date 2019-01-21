@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	
+    $(document).ready(function(e) {
+	//for循环依次判断对象是否获得焦点
+	//each() 类似于for循环，可以依次对对象进行操作
+    $(".text").each(function(){
+		//保存当前对象的默认值
+		var defaultVal=this.value;
+		//this是一个DOM对象，我现在需要使用JQuery方法，需要把它转换为JQuery对象
+		//$(this)
+		$(this).focus(function(){
+			//鼠标点一次获取焦点
+			if(this.value==defaultVal)
+				this.value="";
+		});
+		$(this).blur(function(){
+			if(this.value=="")
+				this.value=defaultVal;
+		});
+	});
+	
+	$("input[type='button']").click(function(){
+		//val()获取和设置value属性
+		var name=$("input[type='text']").val();
+		var content=$("textarea").val();
+		var $li=$("<li><span>"+name+"</span><p>"+content+"</p></li>");
+		$li.appendTo("ul");
+		$("input[type='text']").val("你的昵称");
+		$("textarea").val("你要说的话");
+	});
+});
+
+</script>
+</head>
+<body>
+<h1>制作留言板前端局部更新效果</h1>
+<ul>
+	<li>
+    	<span>功夫熊猫</span>
+    	<p>欢迎你</p>
+	</li>
+</ul>
+<form method="post">
+	<h2>Message</h2>
+	<label for="Name">昵称</label>
+	<input type="text" name="Name" class="text" value="你的昵称" />
+	<label for="Content">留言内容</label>
+	<textarea name="Content" class="text" rows="4">你要说的话</textarea>
+	<input type="button" value="单击这里提交留言" />
+</form>
+</body>
+</html>

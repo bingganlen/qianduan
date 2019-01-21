@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>绑定事件</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.textcolor{color:#F00; font-weight: bold;}
+        .myinput{width: 400px; height: 60px;}
+	</style>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    	$().ready(function(e){
+    		var text = $("#mydiv textarea").val();
+    		var len = text.length;
+
+             $("#mydiv var").html(100-len);
+             $(document).keyup(function(){
+                 text = $("#mydiv textarea").val();
+                 len = text.length;
+                 if (len>=100) {
+                 	$("#mydiv var").html("对不起， 你输入的字符超长了");
+                 	$("#mydiv textarea").attr("readonly",true);
+
+                 }else{
+                 	$("#mydiv var").html(100-len);
+
+                 }
+             });
+    	});
+
+    </script>
+
+
+</head>
+<body>
+    <div id="mydiv">
+    	<p id="tj">你还可以输入<var class="textcolor">100</var>个字符</p>
+    	<p class="">
+    		<textarea class="myinput">text</textarea>
+    	</p>
+    </div>
+    <input type="botton" name="" value="移除事件">
+
+</body>
+</html>

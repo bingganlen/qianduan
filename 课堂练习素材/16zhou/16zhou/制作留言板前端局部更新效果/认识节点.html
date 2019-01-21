@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>节点是什么</title>
+</head>
+   <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+   <script type="text/javascript">
+   	  $(document).ready(function(){
+   	  	 var $li=$("ul li:first");
+   	  	 var li_txt = $li.text();
+   	  	 alert(li_txt);
+
+      $(function(){
+            $("select").change(function(){
+                var v =$(this).val();
+                $("img").attr("src","img/"+v+".jpg");
+            });
+        });
+
+   	  });
+
+   </script>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	h1,ul,li{text-align: center;}
+</style>
+<body>
+<h1>豪哥豪哥，你真了不得</h1>
+<ul>
+	<li>嘘，谦虚</li>
+	<li>哪里哪里</li>
+	<li>宇宙圣吊</li>
+	<li>val() 获取value值</li>
+</ul>
+
+ <select>
+            <option value="1">第一张</option>
+            <option value="2">第二张</option>
+            <option value="3">第三张</option>
+        </select>
+        <img src="img/1.jpg" width="100"/>
+</body>
+</html>

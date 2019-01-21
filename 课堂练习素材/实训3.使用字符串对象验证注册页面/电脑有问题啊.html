@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>×¢²áÒ³Ãæ</title>
+<style type="text/css">
+body{
+	margin:0;
+	padding:0;
+	font-size:12px;
+	line-height:20px;
+}
+.main{
+	width:525px;
+	margin-left:auto;
+	margin-right:auto;
+	}
+.hr_1 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #3275c3;
+	height: 35px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #3275c3;
+	vertical-align:bottom;
+	padding-left:12px;}
+.left{
+	text-align:right;
+	width:80px;
+	height:25px;
+	padding-right:5px;}
+	
+.center{width:135px;}
+.inputClass{
+	width:130px;
+	height:16px;
+	border:solid 1px #79abea;}
+div{color:#f00;}	
+</style>
+
+</head>
+
+<body>
+<table class="main" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/logo.jpg" width="150" height="57" alt="logo" /><img src="images/banner.jpg" width="375" height="57" alt="banner" /></td>
+  </tr>
+  <tr>
+    <td class="hr_1">ÐÂÓÃ»§×¢²á</td>
+  </tr>
+  <tr>
+    <td style="height:10px;"></td>
+  </tr>
+  <form action="" method="post" name="myform">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="left">ÓÃ»§Ãû£º</td>
+    <td class="center"><input id="user" type="text" class="inputClass" onblur="checkUser()" /></td>
+    <td><div id="user_prompt">ÓÃ»§ÃûÓÉÓ¢ÎÄ×ÖÄ¸ºÍÊý×Ö×é³ÉµÄ4-16Î»×Ö·û£¬ÒÔ×ÖÄ¸¿ªÍ·</div></td>
+  </tr>
+  <tr>
+    <td class="left">ÃÜÂë£º</td>
+    <td class="center"><input id="pwd" type="password" class="inputClass"  onblur="checkPwd()"/></td>
+    <td><div id="pwd_prompt">ÃÜÂëÓÉ4-10Î»×Ö·û×é³É</div></td>
+  </tr>
+  <tr>
+    <td class="left">È·ÈÏÃÜÂë£º</td>
+    <td class="center"><input id="repwd" type="password" class="inputClass"  onblur="checkRepwd()"/></td>
+    <td><div id="repwd_prompt"></div></td>
+  </tr>
+   <tr>
+    <td class="left">µç×ÓÓÊÏä£º</td>
+    <td class="center"><input id="email" type="text" class="inputClass"  onblur="checkEmail()"/></td>
+    <td><div id="email_prompt"></div></td>
+  </tr>
+    <tr>
+    <td class="left">ÊÖ»úºÅÂë£º</td>
+    <td class="center"><input id="mobile" type="text" class="inputClass" onblur="checkMobile()" /></td>
+    <td><div id="mobile_prompt"></div></td>
+  </tr>
+  <tr>
+    <td class="left">ÉúÈÕ£º</td>
+    <td class="center"><input id="birth" type="text" class="inputClass"  onblur="checkBirth()"/></td>
+    <td><div id="birth_prompt"></div></td>
+  </tr>
+   <tr>
+    <td class="left">&nbsp;</td>
+    <td class="center"><input name="" type="image" src="images/register.jpg" /></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</td>
+  </tr>
+  </form>
+</table>
+
+
+
+
+<script type="text/javascript">
+
+    function $(elemetId){//函数$ 用来简化页面元素对象
+      return document.getElementById(elemetId);
+    }
+
+
+    function checkUser(){
+      var user = $("user").value;
+      var userId = $("user_prompt");
+          userId.innerHTML="";
+
+      var reg = /^[a-zA-Z][a-zA-Z0-9][3,15]$/;// 4 - 16个字符，以字母开头  /^\D{4,16}$/     
+      if (reg.test(user)== false) {
+        userId.innerHTML="用户名输入不正确";
+        return false;
+      }
+      return true;
+    }
+
+
+
+    function checkPwd(){
+      var pwd  = $("pwd").value;
+      var pwdId = $("user_prompt");
+          pwdId.innerHTML="";
+
+      var reg = /^[a-zA-Z0-9][4,10]$/;//   4 -10 个字符
+      if (reg.test(pwd)== false) {
+        userId.innerHTML="密码4-10输入不正确";
+        return false;
+      }
+      return true;
+    }
+
+
+     function checkEmail(){
+		    var email = document.getElementById("email").value;
+			var email_meg = document.getElementById("email_prompt");
+			eemail_meg.innerHTML="";
+      var emailReg = /^\w+@\w+\. (com)||(cn)$/;
+      if (!emailReg.text("email")) {
+        eemail_meg.innerHTML = "输入的邮箱地址不正确！！！！";
+        return false;
+
+      }
+      eemail_meg.innerHTML="邮箱地址可用";
+		   return true;
+		 }
+
+
+
+
+     function checkMobile(){
+      var mobile  = $("mobile").value;
+      var mobileId = $("mobile_prompt");
+          mobileId.innerHTML="";
+
+      var regMobile = /^1\d{10}$/;//   11   以1开头
+      if (regMobile.test(mobile)== false) {
+        mobileId.innerHTML="手机号码输入不正确，请重新输入";
+        return false;
+      }
+      mobileId.innerHTML="";
+      return true; 
+     }
+
+
+
+     function checkBirth(){
+      var birth  = $("birth").value;
+      var birthId = $("birth_prompt");
+          
+
+      var reg = /^((19\d{2})|(200\d)| (201[0-4])) - (0?[1-9]|1[0-2]) - (0?[1-9]|[1-2]\d|3[0-1])$/;//   11   以1开头    \d匹配数字
+      if (reg.test(birth)== false) {
+        birthId.innerHTML="格式输入不正确，1999-05-12";
+        return false;
+      }
+      birthId.innerHTML="";
+      return true;
+     }
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

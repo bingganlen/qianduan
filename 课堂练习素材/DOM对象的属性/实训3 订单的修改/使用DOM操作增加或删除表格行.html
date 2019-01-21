@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>使用HTML DOM操作表格</title>
+<style type="text/css">
+body{
+	font-size:13px;
+	line-height:25px;
+	}
+table{
+	border-top: 1px solid #333;
+	border-left: 1px solid #333;
+	width:300px;
+}
+td{
+	border-right: 1px solid #333;
+	border-bottom: 1px solid #333;
+	}
+.center{
+	text-align:center;
+}
+.title{
+	text-align:center;
+	font-weight:bold;
+	background-color: #cccccc;
+}
+      
+</style>
+</head>
+
+<body>
+<table border="0" cellspacing="0" cellpadding="0" id="myTable">
+  <tr id="row1">
+    <td>书名</td>
+    <td>价格</td>
+  </tr>
+  <tr id="row2">
+    <td>看得见风景的房间</td>
+    <td class="center">&yen;30.00</td>
+  </tr>
+  <tr id="row3">
+    <td>60个瞬间</td>
+    <td class="center">&yen;32.00</td>
+  </tr>
+</table>
+<input name="b1" type="button" value="增加一行"  onclick="addRow()" />
+<input name="b2" type="button" value="删除第2行" onclick="del()">
+<input name="b3" type="button" value="修改标题" onclick="updateRow()" />.
+<input name="b3" type="button" value="复制最后一行" onclick="copyRow()" />
+
+
+<script type="text/javascript">
+    function addRow(){
+    	var f = document.getElementById('row3');
+    	var newrow = document.createElement("tr");//创建行节点
+    	var newcoll = document.createElement("td");//单元格节点
+    	newcoll.innerHTML = "豪哥有多帅";
+
+    	var newcoll2 = document.createElement("td");
+    	newcoll2.innerHTML = "&yen;18:50";
+    	newcoll2.setAttribute("align","center");
+    	newrow.appendChild(newcoll);
+    	newrow.appendChild(newcoll2);//把单元格添加到行节点
+    	document.getElementById("row3").parentNode.insertBefore(newrow,f);
+    }
+
+    function updateRow(){
+    	var u = document.getElementById("row1");
+    	u.setAttribute("style","font-weight:blod; text-align:center; background-color:#cccccc;");
+    }
+
+    function del(){
+    	var d = document.getElementById("row2");
+    	d.parentNode.removeChild(d);
+    	
+    }
+
+    function copyRow(){
+    	var oldRow = document.getElementById("row3");
+    	var newRow = oldRow.cloneNode(true);//复制指定的行和子节点
+    	document.getElementById("myTable").appendChild(newRow);
+    }
+</script>
+</body>
+</html>

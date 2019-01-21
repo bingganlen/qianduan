@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<script type="text/javascript">
+		function change(){
+			var pic = document.getElementById("pic");
+			pic.setAttribute("src","images/grape.jpg");
+		}
+
+		function showSrc(){
+			var t = document.getElementById("pic").getAttribute("src");
+			alert(t);
+		}
+
+		function check(){
+			var favor = document.getElementsByName("enjoy");
+			var like = "你喜欢的水果";
+			for (var i = 0; i < favor.length; i++) {
+				if (favor[i].checked== true) {
+					like += "\n"+favor[i].getAttribute("value");
+				}
+			}
+			alert(like);
+		}
+
+	</script>
+</head>
+<body>
+   <div class="content">
+   	  <img src="images/fruit.jpg" id="pic" alt="水果图片">
+   	  
+   	  <h1>显示你喜欢的水果</h1><br><input type="button" name="btn" value="喜欢的水果" onclick="check()">
+      <input type="checkbox" name="enjoy" value="apple">苹果
+      <input type="checkbox" name="enjoy" value="banana">香蕉
+      <input type="checkbox" name="enjoy" value="grape">葡萄
+      <input type="checkbox" name="enjoy" value="pear">梨
+      <input type="checkbox" name="enjoy" value="watermelon">西瓜
+<br><br>
+   	  <input type="button" value="改变图片" name="" onclick="change()">
+   	  <input type="button" value="显示图片路经" name="" onclick="showSrc()">
+   </div>
+
+</body>
+</html>
