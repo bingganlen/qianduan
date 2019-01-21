@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打印金字塔</title>
+</head>
+<body>
+<a href="../index.html">返回首页</a><br/>
+<script type="text/javascript">
+ var score = window.prompt("请输入一个100内的数字");
+//（2）判断用户是不是点击“取消”按钮
+if( score == null)
+{
+	result = "你取消操作了！";
+}else if( score == "" )
+{
+	result = "你什么也没有输入！";
+}
+else if(parseFloat(score)!=score){
+	result = "不是一个数字"
+}
+else if(score>100 && score>0){
+	
+	result = "超出了范围";
+}
+else{
+	for (var i = 1; i < score ; i++) {
+		for (var j = 0; j < i; j++) {
+			document.write("*");
+		}
+		document.write("<br/>");
+	}
+}
+document.write(result);
+</script>
+	
+</body>
+</html>

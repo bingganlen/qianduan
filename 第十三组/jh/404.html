@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!--声明当前页面的编码集charset=gbk中文编码gb2312,charset=utf-8 国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>那些年找不到的404页面制作 - Arry老师</title>
+		<meta name="Keywords" content="404页面,HTML,css">
+		<meta name="description" content="">
+
+		<!--css js-->
+		<!--css：层叠样式表 一件美丽的外衣-->
+		<!--内嵌样式-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			/*以“.”开头的css样式称之为 类样式*/
+			.error{width:420px;height:185px;background:url("images/bg.png") no-repeat;
+				margin:200px auto;
+				padding-top:55px;
+				padding-left:460px;
+				font-size:14px;
+				font-family:"微软雅黑";
+				color:#666;
+			}
+			.error h2{font-size:20px;}
+			a{color:red;text-decoration:none;}
+			a:hover{text-decoration:underline;}
+			.error .error_index{margin-top:5px;}
+			.error .error_index span{color:red;}
+
+
+		</style>
+
+	</head>
+<body>
+
+	<!--div: 层 盒子，容器-->
+	<!--以class="自定义名称" 称之为 类样式-->
+	<div class="error">
+		<h2>抱歉，404请求您的网站页面打不开！</h2>
+		<p>您可以：稍后再试或 联系我的QQ：<a href="http://wpa.qq.com/msgrd?V=3&Uin=910984013&Site=web.tanzhouedu.com&from=web&Menu=yes">910984013</a></p>
+		<p class="error_index">将在 <span id="time">10</span> 秒后自动转入<a href="http://web.tanzhouedu.com">网站首页</a>，请稍候...</p>
+	</div>
+
+
+<script type="text/javascript">
+     var secs = 10; //倒计时的秒数 
+     var URL ;
+	 // 定义方法
+     function Load(url){
+        URL =url;
+        for(var i=secs; i>=0; i--){ 
+         window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000); 
+       } 
+    }
+    // 更新秒
+    function doUpdate(num){ 
+		document.getElementById('time').innerHTML = num ;
+		if(num == 0) { window.location=URL;  } 
+    }
+
+	// 调用方法
+	Load('http://web.tanzhouedu.com');
+
+</script>
+
+</body>
+</html>

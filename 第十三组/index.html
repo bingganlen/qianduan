@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我们的青春回忆</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+<script src="js/jq.snow.js"></script>
+<script>
+	$(function(){
+		$.fn.snow({ 
+			minSize: 5,		//雪花的最小尺寸
+			maxSize: 100, 	//雪花的最大尺寸
+			newOn: 100		//雪花出现的频率 这个数值越小雪花越多
+		});
+	});
+	</script>
+
+</head>
+<body onload="showTime()">
+<div class="top">
+	<audio controls="controls" autoplay="autoplay" Loop="Loop">
+   <source src="/i/song.ogg" type="audio/ogg" />
+  <source src="mp3/bg.mp3" type="audio/mpeg" />
+</audio>
+<ul>
+        
+	    <li><a href="http://www.lx.cdaoa.cn">我的Cms二开</a></li>
+	    <li><a href="jh/换肤.html">俊豪专区</a></li>
+	    <li id="a2">418</li>
+	    <li id="a1">一些要求</li>
+
+</ul>
+   
+</div>
+<div class="div1">
+<div class="div11">
+		<ul>
+		    <li><img src="images/tb3.png" ><a href="bj/facai.html">JS之我的发财梦</a></li>
+		    <li><img src="images/tb2.png" ><a href="bj/zc.html">省级联动</a></li>
+		 
+		    <li><img src="images/tb1.png" ><a href="bj/jzt.html">JS金字塔</a></li>
+		     
+		</ul>
+
+	</div>
+	<div id="div12">
+
+	
+	</div>
+	
+</div>
+<div class="div2">
+<div class="div22">
+<p>我们的青春加油！</p>
+</div>
+	
+</div>
+
+<div class="index_focus">
+ 
+
+	<a href="javascript:;" class="index_focus_pre" title="上一张">上一张</a>
+	<a href="javascript:;" class="index_focus_next" title="下一张">下一张</a>
+	
+	<div class="bd">
+	
+		<ul>
+			<li>
+				<a href="#" class="pic">
+					<div class="index_focus_info">
+						<h3>我们青春我回忆</h3>
+						<p class="text">转眼间来这里快一年了，有过很多快乐。相信自己付出的总会有收获</p>
+						 
+
+					</div>
+				<img class="pic" src="images/1.jpg" width="1600" height="600" alt="韩国">
+				</a>
+			</li>
+			<li>
+				<a href="#" class="pic">
+					<div class="index_focus_info">
+						<h3>诗权</h3>
+						<p class="text">加油我们的青春</p>
+					</div>
+					<img class="pic" src="images/2.JPG" width="1600" height="600" alt="">
+				</a>
+			</li>
+			<li>
+				<a href="#" class="pic">
+					<div class="index_focus_info">
+						<h3>翼琪：</h3>
+						<p class="text">伸手拥抱我的未来</p>
+					</div>
+					<img class="pic" src="images/3.jpg" width="1600" height="600" alt="">
+				</a>
+			</li>
+			<li>
+				<a href="#" class="pic">
+					<div class="index_focus_info">
+						<h3>俊豪：</h3>
+						<p class="text">其实我的话不多&nbsp;  ﾍ(･_| 喂！作业写完了吗？</p>
+					</div>
+					<img class="pic" src="images/4.jpg" width="1600" height="600" alt="">
+				</a>
+			</li>
+			<li>
+				<a href="#" class="pic">
+					<div class="index_focus_info">
+						<h3>418的回忆</h3>
+						<p class="text">短暂的一年又快过去了！很高兴和这一群兄弟一天打打闹闹，每天我们都在成长，每天我们都在进步！加油418</p>
+					</div>
+					<img class="pic" src="images/5.jpg" width="1600" height="600" alt="">
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="slide_nav">
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+	</div>
+	
+</div>
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".index_focus").hover(function(){
+		$(this).find(".index_focus_pre,.index_focus_next").stop(true, true).fadeTo("show", 1)
+	},function(){
+		$(this).find(".index_focus_pre,.index_focus_next").fadeOut()
+	});
+	
+	$(".index_focus").slide({
+		titCell: ".slide_nav a ",
+		mainCell: ".bd ul",
+		delayTime: 500,
+		interTime: 3500,
+		prevCell:".index_focus_pre",
+		nextCell:".index_focus_next",
+		effect: "fold",
+		autoPlay: true,
+		trigger: "click",
+		startFun:function(i){
+			$(".index_focus_info").eq(i).find("h3").css("display","block").fadeTo(1000,1);
+			$(".index_focus_info").eq(i).find(".text").css("display","block").fadeTo(1000,1);
+		}
+	});
+
+});
+$(document).ready(function(){
+  $("#a1").mouseenter(function(){
+    $(".div1").slideToggle(4000);
+    $(".div2").hide();
+    
+  });
+});
+$(document).ready(function(){
+  $("#a2").mouseenter(function(){
+    $(".div2").slideToggle(3000);
+     $(".div1").hide();
+   
+    
+  });
+});
+
+
+function showTime()
+{
+	var today = new Date();
+	var year = today.getFullYear();
+	var month = today.getMonth()+1;
+	var day = today.getDate();
+	var hours = today.getHours();
+	var minutes = today.getMinutes();
+	var seconds = today.getSeconds();
+	month 	= month<10 	? "0"+month : month;
+	day 	= day  <10 	? "0"+day : day;
+	hours 	= hours<10 	? "0"+hours : hours;
+	minutes	= minutes<10 ? "0"+minutes : minutes;
+	seconds = seconds<10 ? "0"+seconds : seconds;
+	var str = "现在是北京时间:"+"\n"
+	var str =str+year+"年"+month+"月"+day+"日 "+hours+"时"+minutes+"分"+seconds+"秒";	
+	var obj = document.getElementById("div12");
+	obj.innerHTML = str;
+	//延时器
+	window.setTimeout("showTime()",1000);
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html onclick="newStar(event)" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>我的发财梦</title>
+<style type="text/css">
+	h1{
+		font-size: 30px;
+		color: white;
+		text-align: center;
+
+	}
+	a {
+		color:white;
+		text-decoration: none;
+	}
+</style>
+<script type="text/javascript">
+function init()
+{
+	document.body.bgColor ="#000";
+}
+function newStar(e)
+{
+	//创建图片节点
+	var node_img = document.createElement("img");
+	//给图片节点添加src属性
+	node_img.src = "../images/timg.jpg";
+	node_img.style.position = "absolute";
+	//图片随机坐标值和大小随机
+	var width = getRandom(15,80);
+	//取得event对象的窗口的坐标值
+	var x = e ? e.clientX : event.clientX;
+	var y = e ? e.clientY : event.clientY;
+	//设置相关定位属性
+	node_img.style.left = (x-width/2)+"px";
+	node_img.style.top = (y-width/2)+"px";
+	node_img.style.width = width+"px";
+	//将图片节点追加到body
+	document.body.appendChild(node_img);
+}
+function getRandom(min,max)
+{
+	return Math.floor(Math.random()*(max-min)+min);
+}
+</script>
+</head>
+
+<body onload="init()">
+<h1 color="white"><a href="../index.html"> 点击屏幕出效果,点击字体返回主页面</a></h1>
+</body>
+</html>

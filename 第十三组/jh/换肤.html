@@ -1,0 +1,132 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+
+	<style type="text/css">
+      *{margin: 0;padding: 0;}
+      body{background:url("images/3.jpg");}
+      .btn{width: 50px;height: 50px;background: url("images/upseek.png");display: block;/*  默认为块级标签， 在这里a标签变成块级，拥有宽高 */
+           position: fixed;/* 固定定位 */ top: 0;right: 0;}
+         /*  a:hover  当鼠标画上去的时候; */
+          .btn:hover{background: url("images/upseek.png") 0px -64px;}
+          .huanfu{width: 100%;height:120px;background: rgba(0,0,0,0.5);}/*rgb代表颜色，三个0代表黑色， 最后a为当前元素的透明度   */
+          .huanfu .Con{width: 705px;height:120px;margin: 0 auto; position: relative;}
+          .huanfu .Con img.but1{position: absolute;left: 0px;top:45px;}
+          .huanfu .Con img.but2{position: absolute;top: 45px;right: 0px;}
+          .huanfu .Con .scroll{width:672px;height: 120px;margin: 0 auto;position: relative; overflow: hidden;}
+          .huanfu .Con .scroll .imgList{width: 1000%;height: 110px;
+          	position: absolute;left: -672px;top: 0px;  /*  构建一个无限大的长方形，其实滚动的效果 就是改变left的值，  */}
+
+          	.scroll .imgList ul li{width: 138px;height:75px;list-style-type: none;/* 列表样式：去掉圆点 */ float: left; margin: 10px 11px 0px;/*  div外边距制造间距   上10 左右22（分左右）除2得11  下0*/border: 4px solid #fff;}
+          	/*  点击按钮要移动168 =  照片138 + 左右边框和8 + 左右外边距22 
+                每个图片站位168 ，4 个图片， 存放图片的div宽度为672px
+          	*/
+        
+
+   .content{width:500px;height:400px;margin: 100px auto;}
+   .content .logo{color:#FFF; background:#000; height:60px;text-align:center;}
+   .content .logo p{font-family:华文楷书; font-size:24px;padding-top:20px;}
+   .content .onc{padding-top:30px; background:#3CC;height:310px;}
+   
+   #mytable{position:relative;left:30px;font-size:18px;}
+   .inputa{width:400px;height:50px;font-size:16px;}
+   .left{padding-left:20px;font-size:24px;}
+   .a{position:relative;left:200px;}
+   .btnlogin{width:155px;height:55px;cursor:pointer; background:#CCC;position:relative;left:133px;bottom:20px;font-size:20px;color:#09C;}  
+
+
+
+	</style> 
+</head>
+<body>
+   <a href="#" class="btn"></a>
+   <!--换肤start-->
+   <div class="huanfu">
+       <div class="Con">
+           <img src="images/dirl.png" class="but1">
+           <img src="images/dirr.png" class="but2">
+
+           <!-- 滚动内容Start -->
+		   <div class="scroll">
+              <div class="imgList">
+                  <ul>
+                  	<li><img src="images/1-1.jpg" width="138" height="75"></li>
+                  	<li><img src="images/2-2.jpg" width="138" height="75"></li>
+                  	<li><img src="images/3-3.jpg" width="138" height="75"></li>
+                  	<li><img src="images/4-4.jpg" width="138" height="75"></li>
+                  	<li><img src="images/5-5.jpg" width="138" height="75"></li>
+                  	<li><img src="images/6-6.jpg" width="138" height="75"></li>
+                  	<li><img src="images/7-7.jpg" width="138" height="75"></li>
+                  	<li><img src="images/8-8.jpg" width="138" height="75"></li>
+                  	<li><img src="images/9-9.jpg" width="138" height="75"></li>
+                  	<li><img src="images/10-10.jpg" width="138" height="75"></li>
+                  	<li><img src="images/11-11.jpg" width="138" height="75"></li>
+                    <li><img src="images/12-12.jpg" width="138" height="75"></li>
+                    <li><img src="images/13-13.jpg" width="138" height="75"></li>
+                    <li><img src="images/14-14.jpg" width="138" height="75"></li>
+                    <li><img src="images/15-15.jpg" width="138" height="75"></li>
+                    <li><img src="images/16-16.jpg" width="138" height="75"></li>
+                  </ul>
+              </div>
+		   </div>
+		   <!-- 滚动内容end -->
+       </div>
+   </div>
+   <!--换肤end-->
+    <div class="content">
+            <div class="logo"><p>登录</p></div>
+            <br />
+             <div class="onc">
+             <div id="mytable">
+                <table>
+                   <tr class="left">账&nbsp;&nbsp;&nbsp;号 ： </tr><br />
+                        <tr><input type="text" placeholder="手机号、用户名、邮箱" class="inputa"/></tr><br /><br />
+                   
+                   <tr class="left">密&nbsp;&nbsp;&nbsp;码 :</tr><br />
+                        <tr><input type="text" placeholder="30s 内输入密码" class="inputa"/></tr><br /> <br />      
+                    <tr><input type="checkbox" />下次自动登录<a href="#" class="a">忘记密码?</a><br /></tr>       
+                </table>
+                   <br />
+                  <a href="index.html"><input type="submit" value="登 &nbsp;&nbsp;&nbsp;录" class="btnlogin"  /></a>
+                </div>
+                
+             </div>
+        </div>
+
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $(".btn").click(function(){
+    	$(".huanfu").slideToggle("slow");//自动判断展开收缩
+    });
+
+    //点击换肤
+    $(".imgList ul li").click(function(){
+    	var simg = $(this).find("img").attr("src");//找到img 标签,  attr查找src的值
+        //alert(simg);
+        var bimg = simg.replace(/-\d*/,"");//从' - ' 开始，找到他后面为数字的（\d代表 0-9   *代表紧跟后面的数字）
+        $("body").css({"background":"url("+bimg+")"});
+
+    });
+
+    //左按钮
+    var clickNum = 0;//点击次数
+    $(".but1").click(function(){
+          clickNum++;
+          if (clickNum>=4) {alert("左边到头了");clickNum=3;}
+          $(".imgList").animate({left:-672*clickNum},1000);//
+    });
+
+    //右按钮
+    $(".but2").click(function(){
+          clickNum--;
+          if (clickNum<0) {alert("右边到头了");clickNum=0;}
+          $(".imgList").animate({left:-672*clickNum},1000);//
+    });
+
+</script>
+</body>
+</html>
