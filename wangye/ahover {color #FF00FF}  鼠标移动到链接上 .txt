@@ -1,0 +1,1 @@
+ahover {color #FF00FF}  鼠标移动到链接上 

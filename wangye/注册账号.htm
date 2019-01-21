@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://passport.csdn.net/account/mobileregister?action=mobileUserInfoView -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<base href="https://csdnimg.cn/release/passport/">--><base href=".">
+    
+    <meta name="referrer" content="unsafe-url">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <script type="text/javascript" src="./注册账号_files/kuickdeal-pc.min.js"></script><script src="./注册账号_files/hm.js"></script><script type="text/javascript" src="./注册账号_files/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://csdnimg.cn/release/passport/css/common.css?v=1.0.5">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        var CFG={
+            BASE_URL : "https://csdnimg.cn/release/passport/",    //当前页面对应的虚拟路径,页面j
+            API_URL  : "https://passport.csdn.net/",               //当前项目默认的后端API地址
+            ROOT_URL  : "https://passport.csdn.net/",              //当前项目根路径, JS跳转
+            STATIC_URL : "https://csdnimg.cn/release/passport/",             //本项目静态资源
+            STATIC_GLOBAL_URL : "https://csdnimg.cn/",               //全局静态资源
+            TRACK_KUICK_ID : "0e1a1f29-37da-4c44-8a33-b4735dc85f10"
+        }
+    </script>
+	<title>注册账号</title>
+	<script>
+	 var errclass = "";
+     var errmsg = "";
+     var okcalsses = [];
+	</script>
+	<link rel="stylesheet" href="https://csdnimg.cn/release/passport/css/login_new.css?v=1.0.5">
+	<script type="text/javascript" src="./注册账号_files/passport.js"></script>
+<script type="text/javascript" charset="utf-8" async="" src="./注册账号_files/kuickdeal-main.min.js"></script><script type="text/javascript" charset="utf-8" async="" src="./注册账号_files/kuickdeal-behaviour.min.js"></script></head>
+<body>
+    <div class="login_main">
+      <div class="login_left">
+        <div class="img_mask"></div>
+        <div class="login_l_c_re">
+          <div class="login_l_c">
+            <div class="login_l_c_t"><a href="https://www.csdn.net/" target="_blank"><i class="iconfont"></i></a></div>
+            <div class="login_l_c_b">
+              <p class="login_l_c_p">我心中已经听到来自远方的呼唤，再不需要回过头去关心身后的种种是非。</p>
+              <div class="login_author">米兰·昆德拉</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login_r_wrap">
+        <div class="login_c regist_c">
+          <div class="login_c_t"><i class="iconfont"></i>差一步就完成</div>
+          <div class="login_c_c regist_c_c">
+            <div class="regist_step">
+              <label class="step_green"><span><i>1</i></span><em>注册码</em></label><strong></strong>
+              <label class="step_orange"><span><i>2</i></span><em>用户名及密码</em></label><strong></strong>
+              <label><span><i>3</i></span><em>完成</em></label>
+            </div>
+            <form id="form1" action="https://passport.csdn.net/account/mobileregister?action=saveMobileUser" method="post">
+              <ul class="step2_list">
+                <li>
+                  <input type="text" class="iphone" name="mobile" placeholder="输入尾号为7261的手机号"><i class="iconfont right_icon" style="display: inline;"></i>
+                  <div class="error_tips blank_tips" style="display: none;"><i class="iconfont"></i><span>请输入您的手机号！</span></div>
+                </li>
+                <li>
+                  <input type="text" placeholder="用户名" class="userName" name="username" value=""><i class="iconfont right_icon" style="display: inline;"></i>
+                  <div class="error_tips blank_tips" style="display: none;"><i class="iconfont"></i><span>6～20个字符，支持字母、数字和“_”格式，需字母开头</span></div>
+                </li>
+                <li>
+                  <input type="text" placeholder="邮箱" class="re_email" name="email" value=""><i class="iconfont right_icon" style="display: inline;"></i>
+                  <div class="error_tips blank_tips" style="display: none;"><i class="iconfont"></i><span>请输入您的邮箱！</span></div>
+                </li>
+                <li>
+                  <input type="password" placeholder="输入密码" class="re_password" name="password"><i class="iconfont right_icon" style="display: inline;"></i>
+                  <div class="error_tips blank_tips" style="display: none;"><i class="iconfont"></i><span>8-20个字符；只能包含大小写、数字以及标点（空格除外）</span></div>
+                </li>
+                <li>
+                  <input type="password" placeholder="再次输入密码" class="re_password_again" name="confirmpassword"><i class="iconfont right_icon" style="display: inline;"></i>
+                  <div class="error_tips blank_tips" style="display: none;"><i class="iconfont"></i><span>8-20个字符；只能包含大小写、数字以及标点（空格除外）</span></div>
+                </li>
+              </ul>
+              <input id="regist" accesskey="l" value="立即注册" tabindex="6" type="submit" class="next_btn regist" data-kuick="{&quot;act&quot;:&quot;csdn06&quot;,&quot;desc&quot;:&quot;下一步:提交注册信息&quot;}">
+            </form>
+          </div>
+        </div>
+        <div class="login_copyright">京 ICP 证 09002463 号 | Copyright ©
+				1999-2018, CSDN.NET, All Rights Reserved</div>
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+<!--kucik deal report   位于公共jquery后面-->
+<script type="text/javascript">
+
+
+    var _kuickDeal = _kuickDeal || [];
+    window._kuickDeal = _kuickDeal;
+    var onKDReadyFinish=function(){};
+    (function(){
+        var _dealProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        var _sdkURL = _dealProtocol + 'deal.kuick.cn/sdk/v1/';
+
+        _kuickDeal.push(['SDK_URL', _sdkURL]);
+        _kuickDeal.push(['KUICK_API_URL', _dealProtocol + 'api.kuick.cn/api/v1.0']);
+        _kuickDeal.push(['DEAL_API_URL', _dealProtocol + 'deal-api.kuick.cn/api/v1.0']);
+        _kuickDeal.push(['APP_KEY',CFG.TRACK_KUICK_ID]);
+        _kuickDeal.push(['LOG_LEVEL', '3']);
+
+        (function() {
+            if(typeof define === 'function' && define.amd) {
+                require([_sdkURL + 'kuickdeal-pc.min.js'], function(kd){
+                    window.kuickDeal = kd;
+                });
+            } else {
+                var deal = document.createElement('script');
+                deal.type='text/javascript';
+                deal.async = false;
+                deal.src = _sdkURL + 'kuickdeal-pc.min.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(deal, s);
+            }
+        })();
+    })();
+    var onKDReady = function(){
+        $("[data-kuick]").on("click",function(){
+            var data=$(this).data("kuick");
+            console.log("kuick track:",data);
+            kuickDeal.onBehaviour(data.act, data.desc);
+        })
+
+        $("body").trigger("onKDReady");
+        onKDReadyFinish();
+
+    }
+
+    if (typeof kuickDeal == "undefined"){
+        if(document.addEventListener){
+            document.addEventListener('KDReady', onKDReady, false);
+        } else if (document.attachEvent){
+            document.attachEvent('KDReady', onKDReady);
+            document.attachEvent('onKDReady', onKDReady);
+        }
+    } else {
+        kuickDeal.ready(onKDReady);
+    }
+</script>
+
+
+
+
+</body></html>

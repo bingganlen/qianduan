@@ -1,0 +1,19 @@
+它可以让行内显示为块的元素，变为行内显示，例如
+
+<div> DIV1 </div>
+
+<div> DIV2 </div>
+
+这里DIV1和DIV2分别占一行，但是你给他们加上属性后变了
+
+<div style= "display:inline "> DIV1 </div>
+
+<div style= "display:inline "> DIV2 </div>
+
+DIV1和DIV2这时候显示在同一行了，试试看吧。
+
+和 display:inline 对应的是 display:block，block 会让应用了该 CSS 属性的 HTML 标记变成块级别元素，例如 SPAN 是行内显示的，但是你加了 display:block 属性就不一样了
+
+<span style= "display:block "> SPAN1 </span>
+
+<span style= "display:block "> SPAN2 </span>
