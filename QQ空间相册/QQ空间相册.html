@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	    *{margin: 0;padding: 0;}
+	     #bigImg{width: 100%;height: 100%;background: #cc33cc; position: absolute;overflow: hidden;}
+	     #imgList{width: 570px; height: 450px; background: rgba(0,0,0,0.5);position: absolute;top: 100px;left: 350px;
+	     box-shadow: 0px 0px 10px #ff3300;/*  阴影效果 */}
+	     #imgList h3{width: 570px;height: 46px;color: #fff;background: url("images/title_bg.jpg");font-size: 18px;font-family: "微软雅黑";line-height: 46px;/* 文字竖直居中 */text-indent: 20px;/* 与左边间距 */}
+	     #imgList h3 img.close{float: right;margin: 8px 10px 0px 0px;}
+         #imgList ul{border: 2px solid blue;}
+         #imgList ul li{border: 2px solid red;color: #fff;width: 150px;height: 105px;float: left;margin: 10px 14px;list-style-type: none;border: 5px solid #fff;}
+         .button{width: 100%;height: 62px;background:url("images/nav-bg.png");position: absolute;top: 0px;bottom: 0px;}
+         .button .buttonCon{width: 210px;height: 52px;margin: 0px auto;padding-top: 10px;}
+	</style>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+         $(document).ready(function(){
+          var simg = null;//存放小图地址
+          var bimg = null;//存放大图地址
+          var index = 0;
+          var clearTime = null;
+             //关闭按钮
+             $("img.close").click(function(){
+                $("#imgList").hide();
+             });
+
+             //点击弹出相册按钮
+             $("img.album").click(function(){
+                $("#imgList").show();
+             });
+
+             //点击图片列表，找到对应大图
+             $("#imgList ul li").click(function(){
+                index = $(this).index();
+                simg = $(this).find("img").attr("src");//获取小图地址
+                bimg = simg.replace("s_","");//把src路径 中s_除掉
+                $("#bigImg img").attr("src",bimg);
+                $("#imgList").hide();
+             });
+
+             //右按钮
+             $("img.forward").click(function(){
+                clearInterval(clearTime);//清除定时器
+                index++;
+                if(index>8){index=0;}
+                simg = $("#imgList ul li").eq(index).find("img").attr("src");//去掉index 获取小图地址
+                bimg = simg.replace("s_","");//把src路径 中s_除掉
+                $("#bigImg img").attr("src",bimg).css("opacity","0").animate({"opacity":1},500);
+                /* css("opacity","0").fadeIn() 淡入淡出效果   ：设置为透明并.fadeIn()慢慢显示出来*/
+             });
+
+             //左按钮
+             $("img.back").click(function(){
+              clearInterval(clearTime);
+                index--;
+                if(index<0){index=8;}
+                simg = $("#imgList ul li").eq(index).find("img").attr("src");//去掉index 获取小图地址
+                bimg = simg.replace("s_","");//把src路径 中s_除掉
+                $("#bigImg img").attr("src",bimg);
+             });
+
+             //自动播放 
+             function autoPlay(){
+                clearTime = setInterval(function(){
+                  index++;if(index<0){index=8;}
+                  simg = $("#imgList ul li").eq(index).find("img").attr("src");//去掉index 获取小图地址
+                  bimg = simg.replace("s_","");//把src路径 中s_除掉
+                  $("#bigImg img").attr("src",bimg);
+
+              },2000);
+               
+             }
+             autoPlay(); 
+             
+         });
+
+	</script>
+</head>
+<body>
+    <div id="bigImg"><img src="images/1.jpg"></div>
+
+  <!--图片相册Start-->
+    <div id="imgList">
+       <h3>图片相册  <img src="images/close.png" class="close"></h3>
+       <ul>
+       	<li><img src="images/s_1.jpg"></li>
+       	<li><img src="images/s_2.jpg"></li>
+       	<li><img src="images/s_3.jpg"></li>
+       	<li><img src="images/s_4.jpg"></li>
+       	<li><img src="images/s_5.jpg"></li>
+       	<li><img src="images/s_6.jpg"></li>
+       	<li><img src="images/s_7.jpg"></li>
+       	<li><img src="images/s_8.jpg"></li>
+       	<li><img src="images/s_9.jpg"></li>
+       </ul>
+    </div>
+  <!--图片相册 end-->
+ 
+ <!-- 按钮 start-->
+    <div class="button">
+       <div class="buttonCon">
+          <img src="images/album.png" class="album">
+          <img src="images/back_dull.png" class="back">
+          <img src="images/play_dull.png">
+          <img src="images/forward_dull.png" class="forward">
+       </div>
+    </div>
+
+ <!-- 按钮 end-->
+</body>
+</html>
