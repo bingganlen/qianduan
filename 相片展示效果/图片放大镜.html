@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+    *{margin: 0;padding: 0;}
+    #Main{width: 980px;height: 650px;margin: 50px auto 0px;}
+    #Main ul{border: 2px solid #000;}
+    #Main ul li{width: 288px;height: 180px; list-style-type: none; float: left;margin: 10px 15px;overflow: hidden;  box-shadow: 0px 0px 10px #000; /*  box-shadow阴影效果    box-shadow: 水平偏移  竖直偏移 半径 颜色   */}
+
+    .gray{width: 100%; height:100%; background: rgba(0,0,0,0.6);position: fixed;/* 固定定位 */  top: 0px;left:0px; display: none;}
+
+    .showImg{width: 760px;height: 460px;background: #fff;position: absolute;top: 100px;left: 400px;padding: 10px;/* 上下左右分为10像素  */ display:none; }
+    .showImg img.but1{position: absolute;top: 175px;left:-85px;}
+    .showImg img.but2{position: absolute;top: 175px;right:-81px;}
+
+    </style>
+    
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		   
+		var index = 0;//保存序列
+        var bimg ="";
+         $("#Main ul li").click(function(){
+         	$(".gray").toggle();
+         	$(".showImg").toggle();
+         	bimg = $(this).find("img").attr("bigsrc");   //alert(bimg);
+
+         	$(".showImg img.bigImg").attr("src",bimg);//换大图的地址
+         	index = $(this).index();
+         });
+
+         //点击灰色图层，把大图隐藏
+         $(".gray").click(function(){
+         	$(".gray").hide();
+         	$(".showImg").hide();
+         });
+
+         //向右按钮
+         $("img.but2").click(function(){
+             index++;
+             if (index>8) {/*alert("右到头");*/index=8;}
+             //index 为1， eq则去掉 li为1的li
+             bimg = $("#Main ul li").eq(index).find("img").attr("bigsrc");
+             $(".showImg img.bigImg").attr("src",bimg);//换大图的地址
+         });
+
+         //向左按钮
+         $("img.but1").click(function(){
+             index--;
+             if (index<0) {/*alert("左到头");*/ index=0;}
+             //index 为1， eq则去掉 li为1的li
+             bimg = $("#Main ul li").eq(index).find("img").attr("bigsrc");
+             $(".showImg img.bigImg").attr("src",bimg);//换大图的地址
+         });
+		});
+         
+
+	</script>
+</head>
+<body>
+<!--图片列表开始--> 
+	<div id="Main">
+	   <ul>
+	   	<li><img src="image/s1.jpg" bigsrc="image/1.jpg"></li>
+	   	<li><img src="image/s2.jpg" bigsrc="image/2.jpg"></li>
+	   	<li><img src="image/s3.jpg" bigsrc="image/3.jpg"></li>
+	   	<li><img src="image/s4.jpg" bigsrc="image/4.jpg"></li>
+	   	<li><img src="image/s5.jpg" bigsrc="image/5.jpg"></li>
+	   	<li><img src="image/s6.jpg" bigsrc="image/6.jpg"></li>
+	   	<li><img src="image/s7.jpg" bigsrc="image/7.jpg"></li>
+	   	<li><img src="image/s8.jpg" bigsrc="image/8.jpg"></li>
+	   	<li><img src="image/s9.jpg" bigsrc="image/9.jpg"></li>
+	   </ul>
+	</div>
+<!--图片列表end--> 
+
+
+<!-- 灰色图层start -->
+    <div class="gray"></div>
+<!-- 灰色图层end -->
+
+<!-- 大图展示区start -->
+    <div class="showImg">
+        <img src="image/l.png" class="but1">
+        <img src="image/r.png" class="but2">
+        <img src="image/1.jpg" class="bigImg">
+    </div>
+
+<!-- 大图展示区end -->
+
+
+</body>
+</html>
